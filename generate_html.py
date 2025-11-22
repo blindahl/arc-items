@@ -1,11 +1,39 @@
 import json
 import os
+import base64
 
-def generate_html(items_data):
+def load_image_as_base64(image_path):
+    """Load an image file and convert it to base64"""
+    try:
+        if os.path.exists(image_path):
+            with open(image_path, 'rb') as f:
+                image_data = f.read()
+                return base64.b64encode(image_data).decode('utf-8')
+    except Exception as e:
+        print(f"Error loading image {image_path}: {e}")
+    return None
+
+def generate_html(items_data, output_dir='output'):
     """Generate static HTML page with all item categories"""
     
+    # Convert images to base64 and embed in items data
+    items_with_base64 = {}
+    for category, items in items_data.items():
+        items_with_base64[category] = []
+        for item in items:
+            item_copy = item.copy()
+            # If item has an image path, load and convert to base64
+            if 'image_path' in item_copy:
+                image_full_path = os.path.join(output_dir, item_copy['image_path'])
+                base64_data = load_image_as_base64(image_full_path)
+                if base64_data:
+                    item_copy['image_base64'] = base64_data
+                # Remove the image_path since we're embedding
+                del item_copy['image_path']
+            items_with_base64[category].append(item_copy)
+    
     # Convert items data to JSON for JavaScript
-    items_json = json.dumps(items_data)
+    items_json = json.dumps(items_with_base64)
     
     html = """<!DOCTYPE html>
 <html lang="en">
@@ -391,9 +419,8 @@ def generate_html(items_data):
                 const category = item.category || 'Unknown';
                 
                 let imageHtml = '';
-                if (item.image_path) {
-                    imageHtml = `<img src="${item.image_path}" alt="${name}" class="item-image" onerror="this.parentElement.querySelector('.no-image').style.display='flex'; this.style.display='none';">
-                                 <div class="no-image" style="display:none;">No Image</div>`;
+                if (item.image_base64) {
+                    imageHtml = `<img src="data:image/png;base64,${item.image_base64}" alt="${name}" class="item-image">`;
                 } else {
                     imageHtml = '<div class="no-image">No Image</div>';
                 }
@@ -469,22 +496,26 @@ def main():
         with open(json_file, 'r', encoding='utf-8') as f:
             items_data = json.load(f)
     except FileNotFoundError:
-        print(f"Error: {json_file} not found. Run scrape_trinkets.py first.")
+        print(f"Error: {json_file} not found. Run scrape.py first.")
         return
     
-    # Generate HTML
-    html_content = generate_html(items_data)
+    # Generate HTML with embedded images
+    print("Embedding images as base64...")
+    html_content = generate_html(items_data, output_dir)
     
     # Save to file
     with open(html_file, 'w', encoding='utf-8') as f:
         f.write(html_content)
     
     total_items = sum(len(items) for items in items_data.values())
+    file_size_mb = os.path.getsize(html_file) / (1024 * 1024)
     print(f"HTML page generated successfully!")
     print(f"Total items: {total_items}")
     print(f"Categories: {len(items_data)}")
+    print(f"File size: {file_size_mb:.2f} MB")
     print(f"Saved to: {html_file}")
     print(f"Open {html_file} in your browser to view the results.")
+    print(f"\nNote: All images are embedded as base64 - this is a single self-contained file!")
 
 if __name__ == "__main__":
     main()
