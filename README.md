@@ -67,21 +67,30 @@ The scraper collects data from all major item categories:
 
 All output files are saved in the `output/` folder:
 - `output/items_data.json` - Cached scraped data in JSON format (structured by category)
-- `output/items.html` - Static HTML page with all items
-- `output/images/` - Downloaded item images (named by category and item)
-
-Open `output/items.html` in your browser to view the results.
+- `output/items.html` - **Self-contained HTML page with embedded images** (single file, fully portable)
+Open `output/items.html` in your browser to view the results. The HTML file is completely self-contained with all images embedded as base64 - you can share just this one file!
 
 ## Features
 
+### Scraping
 - **Multi-Category Support**: Scrapes 8 different item categories
+- **Multi-Level Pricing**: Extracts all price levels for weapons (stores first level for sorting, all levels for reference)
+- **Local Images**: Downloads and saves images locally for faster loading and offline access
+- **Structured Data**: JSON organized by category for easy navigation
+- **Error Handling**: Continues scraping even if individual items fail
+
+### HTML Interface
+- **Single File Output**: All images embedded as base64 - completely portable and self-contained
 - **Category Filtering**: Checkboxes to show/hide each category (all visible by default)
-- **Local Images**: Images saved locally for faster loading and offline access
+  - Select All / Select None buttons for quick toggling
 - **Statistics Dashboard**: Shows total items, visible items, and category counts
-- **Interactive Sorting**: Sort by name or category
+- **Advanced Sorting**: Multiple sort options
   - Name (A-Z / Z-A)
   - Category (A-Z / Z-A)
+  - Sell Price (Low to High / High to Low) - Default
+  - Stack Value (Low to High / High to Low)
+- **Calculated Values**: Automatically calculates and displays Stack Value (Sell Price × Stack Size)
 - **Dynamic Properties**: Displays relevant properties based on item type (Sell Price, Stack Size, Weight, Damage, Type, Rarity, etc.)
-- **Cached Data**: Fast regeneration using saved JSON
+- **Clean Display**: Prices shown without commas for better readability
 - **Responsive Design**: Mobile-friendly grid layout
-- **Structured Data**: JSON organized by category for easy navigation
+- **Cached Data**: Fast regeneration using saved JSON
