@@ -48,6 +48,12 @@ The scraper collects data from all major item categories:
 - **Traps** - https://arcraiders.wiki/wiki/Traps
 - **Trinkets** - https://arcraiders.wiki/wiki/Category:Trinket
 
+## Project Structure
+
+- **`scrape.py`** - Handles all web scraping functionality
+- **`generate_html.py`** - Generates the HTML page from JSON data
+- **`scrape_and_generate.py`** - Convenience script that combines both operations
+
 ## How It Works
 
 1. **First run**: Scrapes all category pages from the Arc Raiders wiki
