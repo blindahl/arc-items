@@ -1,0 +1,207 @@
+import requests
+from bs4 import BeautifulSoup
+import json
+import os
+from urllib.parse import urljoin
+import re
+
+# All categories to scrape
+CATEGORIES = {
+    'Weapons': 'https://arcraiders.wiki/wiki/Weapons',
+    'Augments': 'https://arcraiders.wiki/wiki/Augments',
+    'Shields': 'https://arcraiders.wiki/wiki/Shields',
+    'Healing': 'https://arcraiders.wiki/wiki/Healing',
+    'Quick Use': 'https://arcraiders.wiki/wiki/Quick_Use',
+    'Grenades': 'https://arcraiders.wiki/wiki/Grenades',
+    'Traps': 'https://arcraiders.wiki/wiki/Traps',
+    'Trinkets': 'https://arcraiders.wiki/wiki/Category:Trinket'
+}
+
+def get_page_content(url):
+    """Fetch page content"""
+    response = requests.get(url)
+    response.raise_for_status()
+    return response.text
+
+def download_image(img_url, save_path):
+    """Download image and save locally"""
+    try:
+        response = requests.get(img_url)
+        response.raise_for_status()
+        with open(save_path, 'wb') as f:
+            f.write(response.content)
+        return True
+    except Exception as e:
+        print(f"Error downloading image {img_url}: {e}")
+        return False
+
+def sanitize_filename(name):
+    """Sanitize filename to be safe for filesystem"""
+    return re.sub(r'[<>:"/\\|?*]', '_', name)
+
+def scrape_category_page(category_url, category_name):
+    """Scrape a category page to get all item links"""
+    base_url = "https://arcraiders.wiki"
+    
+    print(f"Fetching {category_name} page...")
+    html = get_page_content(category_url)
+    soup = BeautifulSoup(html, 'html.parser')
+    
+    item_links = []
+    
+    # Check if it's a Category page (like Trinkets)
+    if 'Category:' in category_url:
+        category_content = soup.find('div', {'id': 'mw-pages'})
+        if category_content:
+            links = category_content.find_all('a')
+            for link in links:
+                href = link.get('href')
+                if href and '/wiki/' in href and 'Category:' not in href:
+                    full_url = urljoin(base_url, href)
+                    item_links.append({
+                        'name': link.text.strip(),
+                        'url': full_url
+                    })
+    else:
+        # For regular pages, find tables with items
+        content = soup.find('div', {'id': 'mw-content-text'})
+        if content:
+            # Look for tables with item information
+            tables = content.find_all('table', {'class': 'wikitable'})
+            for table in tables:
+                rows = table.find_all('tr')[1:]  # Skip header
+                for row in rows:
+                    link = row.find('a')
+                    if link and link.get('href'):
+                        href = link.get('href')
+                        if '/wiki/' in href and 'Category:' not in href:
+                            full_url = urljoin(base_url, href)
+                            item_links.append({
+                                'name': link.text.strip(),
+                                'url': full_url
+                            })
+    
+    print(f"Found {len(item_links)} items in {category_name}")
+    return item_links
+
+def scrape_item_page(item_url, item_name, category_name, images_dir):
+    """Scrape individual item page"""
+    print(f"Scraping {item_name}...")
+    html = get_page_content(item_url)
+    soup = BeautifulSoup(html, 'html.parser')
+    
+    item_data = {}
+    item_data['name'] = item_name
+    item_data['url'] = item_url
+    item_data['category'] = category_name
+    
+    # Get the main image
+    content = soup.find('div', {'id': 'mw-content-text'})
+    if content:
+        img = content.find('img')
+        if img:
+            img_url = urljoin("https://arcraiders.wiki", img.get('src'))
+            item_data['image_url'] = img_url
+            
+            # Save image locally
+            img_filename = f"{sanitize_filename(category_name)}_{sanitize_filename(item_name)}.png"
+            img_path = os.path.join(images_dir, img_filename)
+            if download_image(img_url, img_path):
+                item_data['image_path'] = f"images/{img_filename}"
+    
+    # Get infobox data
+    infobox = soup.find('table', {'class': 'infobox'})
+    if infobox:
+        rows = infobox.find_all('tr')
+        for row in rows:
+            th = row.find('th')
+            td = row.find('td')
+            if th and td:
+                key = th.text.strip()
+                
+                # Special handling for Sell Price - extract all levels for weapons
+                if key in ['Sell Price', 'Sell price', 'sell price']:
+                    # Check if there are multiple prices with template-price divs
+                    price_divs = td.find_all('div', {'class': 'template-price'})
+                    if price_divs and len(price_divs) > 1:
+                        # Multiple levels - extract all prices
+                        prices = []
+                        for price_div in price_divs:
+                            price_text = price_div.get_text(strip=True)
+                            # Remove commas from price
+                            price_text = price_text.replace(',', '')
+                            prices.append(price_text)
+                        # Store as comma-separated string for levels 1-4
+                        value = ','.join(prices)
+                        # Also store the first level price separately
+                        item_data['Sell Price'] = prices[0]
+                        item_data['Sell Price All Levels'] = value
+                        continue
+                    elif price_divs:
+                        # Single price in template-price div
+                        value = price_divs[0].get_text(strip=True).replace(',', '')
+                    else:
+                        # Fallback to text content
+                        value = td.text.strip().replace(',', '')
+                else:
+                    value = td.text.strip()
+                
+                item_data[key] = value
+    
+    return item_data
+
+def main():
+    print("=== Arc Raiders Item Scraper ===\n")
+    
+    # Create output directories
+    output_dir = 'output'
+    images_dir = os.path.join(output_dir, 'images')
+    os.makedirs(output_dir, exist_ok=True)
+    os.makedirs(images_dir, exist_ok=True)
+    
+    json_file = os.path.join(output_dir, 'items_data.json')
+    all_items_data = {}
+    
+    # Scrape all categories
+    for category_name, category_url in CATEGORIES.items():
+        print(f"\n{'='*50}")
+        print(f"Processing category: {category_name}")
+        print(f"{'='*50}")
+        
+        try:
+            # Get all items in category
+            items = scrape_category_page(category_url, category_name)
+            
+            # Scrape each item page
+            category_items = []
+            for item in items:
+                try:
+                    data = scrape_item_page(item['url'], item['name'], category_name, images_dir)
+                    category_items.append(data)
+                except Exception as e:
+                    print(f"Error scraping {item['name']}: {e}")
+            
+            all_items_data[category_name] = category_items
+            print(f"Successfully scraped {len(category_items)} items from {category_name}")
+            
+        except Exception as e:
+            print(f"Error processing category {category_name}: {e}")
+            all_items_data[category_name] = []
+    
+    # Save data to JSON
+    with open(json_file, 'w', encoding='utf-8') as f:
+        json.dump(all_items_data, f, indent=2, ensure_ascii=False)
+    
+    total_items = sum(len(items) for items in all_items_data.values())
+    print(f"\n{'='*50}")
+    print(f"Scraping complete!")
+    print(f"Total items scraped: {total_items}")
+    print(f"Categories: {len(all_items_data)}")
+    print(f"Data saved to: {json_file}")
+    print(f"Images saved to: {images_dir}")
+    print(f"{'='*50}")
+    
+    return all_items_data
+
+if __name__ == "__main__":
+    main()
