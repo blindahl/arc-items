@@ -285,25 +285,22 @@ def generate_html(items_data, output_dir='output'):
                     <option value="stackvalue-asc">Stack Value (Low to High)</option>
                     <option value="stackvalue-desc">Stack Value (High to Low)</option>
                 </select>
-                <div style="display: flex; align-items: center; gap: 15px; margin-left: 30px;">
+                <div style="display: flex; align-items: center; gap: 15px; margin-left: 30px; flex-wrap: wrap;">
                     <strong style="color: #2a5298;">Show Categories:</strong>
                     <button onclick="selectAllCategories()" style="padding: 5px 15px; cursor: pointer; background: #2a5298; color: white; border: none; border-radius: 4px;">Select All</button>
                     <button onclick="selectNoneCategories()" style="padding: 5px 15px; cursor: pointer; background: #666; color: white; border: none; border-radius: 4px;">Select None</button>
                     <div id="categoryCheckboxes" style="display: flex; gap: 15px; flex-wrap: wrap;"></div>
-                </div>
-            </div>
-            <div class="controls-row" style="margin-top: 10px;">
-                <div style="display: flex; align-items: center; gap: 15px;">
-                    <strong style="color: #2a5298;">Show Rarities:</strong>
-                    <div class="custom-multiselect" id="rarityMultiselect">
-                        <div class="multiselect-display" onclick="toggleRarityDropdown()">
-                            <span id="rarityDisplayText">Select rarities...</span>
-                        </div>
-                        <div class="multiselect-options" id="rarityOptions">
+                    
+                    <div style="display: flex; align-items: center; gap: 15px; margin-left: 30px;">
+                        <strong style="color: #2a5298;">Show Rarities:</strong>
+                        <div class="custom-multiselect" id="rarityMultiselect">
+                            <div class="multiselect-display" onclick="toggleRarityDropdown()">
+                                <span id="rarityDisplayText">Select rarities...</span>
+                            </div>
+                            <div class="multiselect-options" id="rarityOptions">
+                            </div>
                         </div>
                     </div>
-                    <button onclick="selectAllRarities()" style="padding: 5px 15px; cursor: pointer; background: #2a5298; color: white; border: none; border-radius: 4px;">Select All</button>
-                    <button onclick="selectNoneRarities()" style="padding: 5px 15px; cursor: pointer; background: #666; color: white; border: none; border-radius: 4px;">Select None</button>
                 </div>
             </div>
         </div>
