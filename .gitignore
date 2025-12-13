@@ -26,5 +26,3 @@ output/*.jpeg
 # OS
 .DS_Store
 Thumbs.db
-output/items_data.json
-output/items.html
