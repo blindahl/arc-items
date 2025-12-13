@@ -14,6 +14,7 @@ CATEGORIES = {
     'Quick Use': 'https://arcraiders.wiki/wiki/Quick_Use',
     'Grenades': 'https://arcraiders.wiki/wiki/Grenades',
     'Traps': 'https://arcraiders.wiki/wiki/Traps',
+    'Loot': 'https://arcraiders.wiki/wiki/Loot',
     'Trinkets': 'https://arcraiders.wiki/wiki/Category:Trinket'
 }
 
