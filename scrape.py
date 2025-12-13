@@ -6,7 +6,7 @@ from urllib.parse import urljoin
 import re
 
 # All categories to scrape
-CATEGORIES = {
+CATEGORIES_ = {
     'Weapons': 'https://arcraiders.wiki/wiki/Weapons',
     'Augments': 'https://arcraiders.wiki/wiki/Augments',
     'Shields': 'https://arcraiders.wiki/wiki/Shields',
@@ -15,6 +15,11 @@ CATEGORIES = {
     'Grenades': 'https://arcraiders.wiki/wiki/Grenades',
     'Traps': 'https://arcraiders.wiki/wiki/Traps',
     'Loot': 'https://arcraiders.wiki/wiki/Loot',
+    'Trinkets': 'https://arcraiders.wiki/wiki/Category:Trinket'
+}
+
+CATEGORIES = {
+    'Grenades': 'https://arcraiders.wiki/wiki/Grenades',
     'Trinkets': 'https://arcraiders.wiki/wiki/Category:Trinket'
 }
 
@@ -94,7 +99,55 @@ def scrape_item_page(item_url, item_name, category_name, images_dir):
     item_data = {}
     item_data['name'] = item_name
     item_data['url'] = item_url
-    item_data['category'] = category_name
+    
+    # Determine actual category from data-tag row content
+    actual_category = category_name  # Default to scraped category
+    
+    # Find all data-tag rows without 'icon' and get the one with meaningful content
+    data_tag_rows = soup.find_all('tr', class_=lambda x: x and 'data-tag' in x and 'icon' not in x)
+    data_tag_row = None
+    for row in data_tag_rows:
+        td = row.find('td')
+        if td:
+            text = td.get_text(strip=True)
+            # Look for category names (not rarity like 'Common', 'Rare', etc.)
+            if text in ['Trinket', 'Weapon', 'Augment', 'Shield', 'Healing', 'Quick Use', 'Grenade', 'Trap', 'Loot']:
+                data_tag_row = row
+                break
+    if data_tag_row:
+        td = data_tag_row.find('td')
+        if td:
+            tag_value = td.get_text(strip=True)
+            if tag_value:  # Only print if tag_value is not empty
+                print(f"  → Found data-tag for {item_name}: '{tag_value}'")
+            # Map tag values to our categories
+            category_mapping_ = {
+                'Trinket': 'Trinkets',
+                'Weapon': 'Weapons',
+                'Augment': 'Augments',
+                'Shield': 'Shields',
+                'Healing': 'Healing',
+                'Quick Use': 'Quick Use',
+                'Grenade': 'Grenades',
+                'Trap': 'Traps',
+                'Loot': 'Loot'
+            }
+            category_mapping = {
+                'Trinket': 'Trinkets',
+                'Grenade': 'Grenades'
+            }
+            if tag_value in category_mapping:
+                actual_category = category_mapping[tag_value]
+                if actual_category != category_name:
+                    print(f"  → Reassigned {item_name} from {category_name} to {actual_category}")
+            else:
+                print(f"  → Unknown data-tag value '{tag_value}' for {item_name}, keeping in {category_name}")
+        else:
+            print(f"  → No <td> found in data-tag row for {item_name}")
+    else:
+        print(f"  → No data-tag row found for {item_name}, keeping in {category_name}")
+    
+    item_data['category'] = actual_category
     
     # Get the main image
     content = soup.find('div', {'id': 'mw-content-text'})
@@ -163,7 +216,13 @@ def main():
     json_file = os.path.join(output_dir, 'items_data.json')
     all_items_data = {}
     
+    # Initialize all categories
+    for category_name in CATEGORIES.keys():
+        all_items_data[category_name] = []
+    
     # Scrape all categories
+    temp_items = []  # Store all items temporarily
+    
     for category_name, category_url in CATEGORIES.items():
         print(f"\n{'='*50}")
         print(f"Processing category: {category_name}")
@@ -174,20 +233,35 @@ def main():
             items = scrape_category_page(category_url, category_name)
             
             # Scrape each item page
-            category_items = []
             for item in items:
                 try:
                     data = scrape_item_page(item['url'], item['name'], category_name, images_dir)
-                    category_items.append(data)
+                    temp_items.append(data)
                 except Exception as e:
                     print(f"Error scraping {item['name']}: {e}")
             
-            all_items_data[category_name] = category_items
-            print(f"Successfully scraped {len(category_items)} items from {category_name}")
+            print(f"Successfully processed {len(items)} items from {category_name}")
             
         except Exception as e:
             print(f"Error processing category {category_name}: {e}")
-            all_items_data[category_name] = []
+    
+    # Deduplicate items by URL and group by their actual categories
+    seen_urls = set()
+    for item in temp_items:
+        item_url = item['url']
+        if item_url not in seen_urls:
+            seen_urls.add(item_url)
+            actual_category = item['category']
+            if actual_category in all_items_data:
+                all_items_data[actual_category].append(item)
+            else:
+                # If category doesn't exist, create it
+                all_items_data[actual_category] = [item]
+        else:
+            print(f"  → Skipping duplicate: {item['name']} (already processed)")
+    
+    # Remove empty categories
+    all_items_data = {k: v for k, v in all_items_data.items() if v}
     
     # Save data to JSON
     with open(json_file, 'w', encoding='utf-8') as f:
