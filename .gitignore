@@ -10,8 +10,11 @@ venv/
 env/
 ENV/
 .env
-# Output files
-output/
+# Output files (allow HTML and JSON, ignore images)
+output/images/
+output/*.png
+output/*.jpg
+output/*.jpeg
 
 # IDE
 .vscode/
