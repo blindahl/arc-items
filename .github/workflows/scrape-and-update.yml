@@ -34,12 +34,20 @@ jobs:
     - name: Check if items_data.json changed
       id: check_changes
       run: |
-        if git diff --name-only HEAD~1 HEAD | grep -q "output/items_data.json"; then
-          echo "data_changed=true" >> $GITHUB_OUTPUT
-          echo "items_data.json has changed, will run full scrape"
+        # Check if we have a previous commit to compare against
+        if git rev-parse --verify HEAD~1 >/dev/null 2>&1; then
+          # Compare with previous commit
+          if git diff --name-only HEAD~1 HEAD | grep -q "output/items_data.json"; then
+            echo "data_changed=true" >> $GITHUB_OUTPUT
+            echo "items_data.json has changed, will run full scrape"
+          else
+            echo "data_changed=false" >> $GITHUB_OUTPUT
+            echo "items_data.json unchanged, will only regenerate HTML"
+          fi
         else
-          echo "data_changed=false" >> $GITHUB_OUTPUT
-          echo "items_data.json unchanged, will only regenerate HTML"
+          # No previous commit (first commit or shallow clone), always scrape
+          echo "data_changed=true" >> $GITHUB_OUTPUT
+          echo "No previous commit found, will run full scrape"
         fi
         
     - name: Run scraper (full scrape)
