@@ -9,6 +9,10 @@ on:
   # Optional: Allow manual trigger
   workflow_dispatch:
 
+# Grant write permissions to the GITHUB_TOKEN
+permissions:
+  contents: write
+
 jobs:
   scrape-and-update:
     runs-on: ubuntu-latest
@@ -43,7 +47,5 @@ jobs:
           echo "No changes to commit"
         else
           git commit -m "Auto-update: Scraped latest Arc Raiders data [skip ci]"
-          git push
+          git push origin HEAD:${{ github.ref_name }}
         fi
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
