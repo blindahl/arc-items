@@ -31,9 +31,26 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         
-    - name: Run scraper
+    - name: Check if items_data.json changed
+      id: check_changes
+      run: |
+        if git diff --name-only HEAD~1 HEAD | grep -q "output/items_data.json"; then
+          echo "data_changed=true" >> $GITHUB_OUTPUT
+          echo "items_data.json has changed, will run full scrape"
+        else
+          echo "data_changed=false" >> $GITHUB_OUTPUT
+          echo "items_data.json unchanged, will only regenerate HTML"
+        fi
+        
+    - name: Run scraper (full scrape)
+      if: steps.check_changes.outputs.data_changed == 'true'
       run: |
         python scrape_and_generate.py --scrape
+        
+    - name: Generate HTML only
+      if: steps.check_changes.outputs.data_changed == 'false'
+      run: |
+        python generate_html.py
         
     - name: Configure Git
       run: |
@@ -46,6 +63,10 @@ jobs:
         if git diff --staged --quiet; then
           echo "No changes to commit"
         else
-          git commit -m "Auto-update: Scraped latest Arc Raiders data [skip ci]"
+          if [ "${{ steps.check_changes.outputs.data_changed }}" = "true" ]; then
+            git commit -m "Auto-update: Scraped latest Arc Raiders data [skip ci]"
+          else
+            git commit -m "Auto-update: Regenerated HTML from code changes [skip ci]"
+          fi
           git push origin HEAD:${{ github.ref_name }}
         fi
