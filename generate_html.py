@@ -435,11 +435,28 @@ def generate_html(items_data, output_dir='output'):
                     backgroundColor = rarityColors[item.Rarity] || 'white';
                 }
                 
+                // Build image style with gradient if available
+                let imageStyle = `background-color: ${backgroundColor};`;
+                if (item.image_gradient) {
+                    // Use the original gradient style from the wiki
+                    imageStyle = item.image_gradient;
+                } else {
+                    // Create a dramatic gradient effect based on rarity color
+                    const gradientColor = backgroundColor === 'white' ? '#f5f5f5' : backgroundColor;
+                    if (gradientColor === '#f5f5f5') {
+                        // For white/gray, create a light to dark gradient
+                        imageStyle = `background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 50%, #c0c0c0 100%);`;
+                    } else {
+                        // For colored rarities, create a bright to dark gradient
+                        imageStyle = `background: linear-gradient(135deg, ${gradientColor} 0%, ${gradientColor}80 50%, ${gradientColor}40 100%);`;
+                    }
+                }
+                
                 let imageHtml = '';
                 if (item.image_base64) {
-                    imageHtml = `<img src="data:image/png;base64,${item.image_base64}" alt="${name}" class="item-image" style="background-color: ${backgroundColor};">`;
+                    imageHtml = `<img src="data:image/png;base64,${item.image_base64}" alt="${name}" class="item-image" style="${imageStyle}">`;
                 } else {
-                    imageHtml = `<div class="no-image" style="background-color: ${backgroundColor};">No Image</div>`;
+                    imageHtml = `<div class="no-image" style="${imageStyle}">No Image</div>`;
                 }
                 
                 // Build details dynamically based on available properties

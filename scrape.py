@@ -115,8 +115,8 @@ def scrape_item_page(item_url, item_name, category_name, images_dir):
         td = data_tag_row.find('td')
         if td:
             tag_value = td.get_text(strip=True)
-            if tag_value:  # Only print if tag_value is not empty
-                print(f"  → Found data-tag for {item_name}: '{tag_value}'")
+            #if tag_value:  # Only print if tag_value is not empty
+            #    print(f"  → Found data-tag for {item_name}: '{tag_value}'")
             # Map tag values to our categories
             category_mapping = {
                 'Weapon': 'Weapons',
@@ -169,13 +169,21 @@ def scrape_item_page(item_url, item_name, category_name, images_dir):
             if 'Rarity' in item_data and item_data['Rarity'] in rarity_colors:
                 item_data['background_color'] = rarity_colors[item_data['Rarity']]
     
-    # Get the main image
+    # Get the main image and its gradient style
     content = soup.find('div', {'id': 'mw-content-text'})
     if content:
         img = content.find('img')
         if img:
             img_url = urljoin("https://arcraiders.wiki", img.get('src'))
             item_data['image_url'] = img_url
+            
+            # Check if the image has a gradient style applied
+            img_parent = img.parent
+            if img_parent:
+                parent_style = img_parent.get('style', '')
+                if 'background' in parent_style or 'gradient' in parent_style:
+                    item_data['image_gradient'] = parent_style
+                    print(f"  → Found gradient style for {item_name}: {parent_style}")
             
             # Save image locally
             img_filename = f"{sanitize_filename(category_name)}_{sanitize_filename(item_name)}.png"
