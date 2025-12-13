@@ -2,6 +2,8 @@
 
 This project scrapes item data from the Arc Raiders wiki across multiple categories and generates a static HTML page with thumbnails, category filtering, and sortable information for all items.
 
+Hosted version can be found here: https://blindahl.github.io/arc-items/output/items.html
+
 ## Installation
 
 Install Python dependencies:
