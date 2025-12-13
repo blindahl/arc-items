@@ -9,16 +9,14 @@ import re
 CATEGORIES = {
     'Grenades': 'https://arcraiders.wiki/wiki/Grenades',
     'Trinkets': 'https://arcraiders.wiki/wiki/Category:Trinket',
-    'Loot': 'https://arcraiders.wiki/wiki/Loot'
+    'Loot': 'https://arcraiders.wiki/wiki/Loot',
+    'Weapons': 'https://arcraiders.wiki/wiki/Weapons',
+    'Augments': 'https://arcraiders.wiki/wiki/Augments',
+    'Shields': 'https://arcraiders.wiki/wiki/Shields',
+    'Healing': 'https://arcraiders.wiki/wiki/Healing',
+    'Quick Use': 'https://arcraiders.wiki/wiki/Quick_Use',
+    'Traps': 'https://arcraiders.wiki/wiki/Traps'
 }
-#,
-#    'Weapons': 'https://arcraiders.wiki/wiki/Weapons',
-#    'Augments': 'https://arcraiders.wiki/wiki/Augments',
-#    'Shields': 'https://arcraiders.wiki/wiki/Shields',
-#    'Healing': 'https://arcraiders.wiki/wiki/Healing',
-#    'Quick Use': 'https://arcraiders.wiki/wiki/Quick_Use',
-#    'Traps': 'https://arcraiders.wiki/wiki/Traps'
-#}
 
 def get_page_content(url):
     """Fetch page content"""
