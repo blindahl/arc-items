@@ -6,21 +6,16 @@ from urllib.parse import urljoin
 import re
 
 # All categories to scrape
-CATEGORIES_ = {
+CATEGORIES = {
     'Weapons': 'https://arcraiders.wiki/wiki/Weapons',
     'Augments': 'https://arcraiders.wiki/wiki/Augments',
     'Shields': 'https://arcraiders.wiki/wiki/Shields',
     'Healing': 'https://arcraiders.wiki/wiki/Healing',
     'Quick Use': 'https://arcraiders.wiki/wiki/Quick_Use',
-    'Grenades': 'https://arcraiders.wiki/wiki/Grenades',
     'Traps': 'https://arcraiders.wiki/wiki/Traps',
-    'Loot': 'https://arcraiders.wiki/wiki/Loot',
-    'Trinkets': 'https://arcraiders.wiki/wiki/Category:Trinket'
-}
-
-CATEGORIES = {
     'Grenades': 'https://arcraiders.wiki/wiki/Grenades',
     'Trinkets': 'https://arcraiders.wiki/wiki/Category:Trinket'
+    'Loot': 'https://arcraiders.wiki/wiki/Loot'
 }
 
 def get_page_content(url):
@@ -121,20 +116,16 @@ def scrape_item_page(item_url, item_name, category_name, images_dir):
             if tag_value:  # Only print if tag_value is not empty
                 print(f"  → Found data-tag for {item_name}: '{tag_value}'")
             # Map tag values to our categories
-            category_mapping_ = {
-                'Trinket': 'Trinkets',
+            category_mapping = {
                 'Weapon': 'Weapons',
                 'Augment': 'Augments',
                 'Shield': 'Shields',
                 'Healing': 'Healing',
                 'Quick Use': 'Quick Use',
-                'Grenade': 'Grenades',
                 'Trap': 'Traps',
-                'Loot': 'Loot'
-            }
-            category_mapping = {
+                'Grenade': 'Grenades',
                 'Trinket': 'Trinkets',
-                'Grenade': 'Grenades'
+                'Loot': 'Loot'
             }
             if tag_value in category_mapping:
                 actual_category = category_mapping[tag_value]
