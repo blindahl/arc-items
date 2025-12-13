@@ -7,16 +7,18 @@ import re
 
 # All categories to scrape
 CATEGORIES = {
-    'Weapons': 'https://arcraiders.wiki/wiki/Weapons',
-    'Augments': 'https://arcraiders.wiki/wiki/Augments',
-    'Shields': 'https://arcraiders.wiki/wiki/Shields',
-    'Healing': 'https://arcraiders.wiki/wiki/Healing',
-    'Quick Use': 'https://arcraiders.wiki/wiki/Quick_Use',
-    'Traps': 'https://arcraiders.wiki/wiki/Traps',
     'Grenades': 'https://arcraiders.wiki/wiki/Grenades',
-    'Trinkets': 'https://arcraiders.wiki/wiki/Category:Trinket'
+    'Trinkets': 'https://arcraiders.wiki/wiki/Category:Trinket',
     'Loot': 'https://arcraiders.wiki/wiki/Loot'
 }
+#,
+#    'Weapons': 'https://arcraiders.wiki/wiki/Weapons',
+#    'Augments': 'https://arcraiders.wiki/wiki/Augments',
+#    'Shields': 'https://arcraiders.wiki/wiki/Shields',
+#    'Healing': 'https://arcraiders.wiki/wiki/Healing',
+#    'Quick Use': 'https://arcraiders.wiki/wiki/Quick_Use',
+#    'Traps': 'https://arcraiders.wiki/wiki/Traps'
+#}
 
 def get_page_content(url):
     """Fetch page content"""
@@ -135,10 +137,37 @@ def scrape_item_page(item_url, item_name, category_name, images_dir):
                 print(f"  → Unknown data-tag value '{tag_value}' for {item_name}, keeping in {category_name}")
         else:
             print(f"  → No <td> found in data-tag row for {item_name}")
-    else:
-        print(f"  → No data-tag row found for {item_name}, keeping in {category_name}")
     
     item_data['category'] = actual_category
+    
+    # Extract rarity and background color from data-tag class
+    rarity_row = soup.find('tr', class_=lambda x: x and 'data-tag' in x and any(cls.startswith('data-tag-') and cls != 'data-tag' for cls in x.split()))
+    if rarity_row:
+        classes = rarity_row.get('class', [])
+        for cls in classes:
+            if cls.startswith('data-tag-') and cls != 'data-tag':
+                rarity = cls.replace('data-tag-', '').title()
+                item_data['Rarity'] = rarity
+                #print(f"  → Found rarity for {item_name}: {rarity}")
+                break
+        
+        # Extract background color from the row's style or computed style
+        style = rarity_row.get('style', '')
+        if 'background' in style or 'background-color' in style:
+            item_data['background_color'] = style
+        else:
+            # Try to get computed background color from CSS classes
+            # Common rarity colors based on typical game conventions
+            rarity_colors = {
+                'Common': '#9d9d9d',      # Gray
+                'Uncommon': '#1eff00',    # Green  
+                'Rare': '#0070dd',        # Blue
+                'Epic': '#a335ee',        # Purple
+                'Legendary': '#ff8000',   # Orange
+                'Mythic': '#e6cc80'       # Gold
+            }
+            if 'Rarity' in item_data and item_data['Rarity'] in rarity_colors:
+                item_data['background_color'] = rarity_colors[item_data['Rarity']]
     
     # Get the main image
     content = soup.find('div', {'id': 'mw-content-text'})

@@ -418,11 +418,28 @@ def generate_html(items_data, output_dir='output'):
                 const name = item.name || 'Unknown Item';
                 const category = item.category || 'Unknown';
                 
+                // Get background color for rarity
+                let backgroundColor = 'white';
+                if (item.background_color) {
+                    backgroundColor = item.background_color;
+                } else if (item.Rarity) {
+                    // Fallback rarity colors
+                    const rarityColors = {
+                        'Common': '#f5f5f5',
+                        'Uncommon': '#e8f5e8', 
+                        'Rare': '#e8f0ff',
+                        'Epic': '#f0e8ff',
+                        'Legendary': '#fff0e8',
+                        'Mythic': '#fffae8'
+                    };
+                    backgroundColor = rarityColors[item.Rarity] || 'white';
+                }
+                
                 let imageHtml = '';
                 if (item.image_base64) {
-                    imageHtml = `<img src="data:image/png;base64,${item.image_base64}" alt="${name}" class="item-image">`;
+                    imageHtml = `<img src="data:image/png;base64,${item.image_base64}" alt="${name}" class="item-image" style="background-color: ${backgroundColor};">`;
                 } else {
-                    imageHtml = '<div class="no-image">No Image</div>';
+                    imageHtml = `<div class="no-image" style="background-color: ${backgroundColor};">No Image</div>`;
                 }
                 
                 // Build details dynamically based on available properties
