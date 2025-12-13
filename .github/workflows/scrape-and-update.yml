@@ -20,6 +20,8 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 2  # Fetch last 2 commits to compare
       
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -34,20 +36,31 @@ jobs:
     - name: Check if items_data.json changed
       id: check_changes
       run: |
-        # Check if we have a previous commit to compare against
+        # Check if we have enough history to compare
         if git rev-parse --verify HEAD~1 >/dev/null 2>&1; then
           # Compare with previous commit
           if git diff --name-only HEAD~1 HEAD | grep -q "output/items_data.json"; then
             echo "data_changed=true" >> $GITHUB_OUTPUT
-            echo "items_data.json has changed, will run full scrape"
+            echo "items_data.json has changed in the last commit, will run full scrape"
           else
             echo "data_changed=false" >> $GITHUB_OUTPUT
-            echo "items_data.json unchanged, will only regenerate HTML"
+            echo "items_data.json unchanged in the last commit, will only regenerate HTML"
           fi
         else
-          # No previous commit (first commit or shallow clone), always scrape
-          echo "data_changed=true" >> $GITHUB_OUTPUT
-          echo "No previous commit found, will run full scrape"
+          # Fallback: check if items_data.json exists and is recent
+          if [ -f "output/items_data.json" ]; then
+            # If file exists but is older than 1 day, scrape
+            if [ $(find output/items_data.json -mtime +1 2>/dev/null | wc -l) -gt 0 ]; then
+              echo "data_changed=true" >> $GITHUB_OUTPUT
+              echo "items_data.json is older than 1 day, will run full scrape"
+            else
+              echo "data_changed=false" >> $GITHUB_OUTPUT
+              echo "items_data.json is recent, will only regenerate HTML"
+            fi
+          else
+            echo "data_changed=true" >> $GITHUB_OUTPUT
+            echo "items_data.json doesn't exist, will run full scrape"
+          fi
         fi
         
     - name: Run scraper (full scrape)
