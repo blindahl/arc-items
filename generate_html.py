@@ -45,8 +45,8 @@ def generate_html(items_data, output_dir='output'):
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: #333;
+            background: #000000;
+            color: #ffffff;
             padding: 15px;
             min-height: 100vh;
         }
@@ -59,11 +59,11 @@ def generate_html(items_data, output_dir='output'):
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         .controls {
-            background: white;
+            background: #1a1a1a;
             padding: 15px;
             border-radius: 8px;
             margin-bottom: 15px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(255,255,255,0.1);
         }
         .controls-row {
             display: flex;
@@ -81,7 +81,85 @@ def generate_html(items_data, output_dir='output'):
             border-radius: 5px;
             font-size: 14px;
             cursor: pointer;
-            background: white;
+            background: #2a2a2a;
+            color: #ffffff;
+        }
+        .multiselect-container select {
+            scrollbar-width: thin;
+            scrollbar-color: #2a5298 #1a1a1a;
+        }
+        .multiselect-container select::-webkit-scrollbar {
+            width: 8px;
+        }
+        .multiselect-container select::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+        .multiselect-container select::-webkit-scrollbar-thumb {
+            background: #2a5298;
+            border-radius: 4px;
+        }
+        .multiselect-container select option {
+            padding: 4px 8px;
+            background: #2a2a2a;
+            color: #ffffff;
+        }
+        .multiselect-container select option:checked {
+            background: #2a5298;
+            color: #ffffff;
+        }
+        .custom-multiselect {
+            position: relative;
+            display: inline-block;
+            min-width: 200px;
+        }
+        .multiselect-display {
+            padding: 8px 12px;
+            border: 2px solid #2a5298;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            background: #2a2a2a;
+            color: #ffffff;
+            min-height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .multiselect-display:after {
+            content: '▼';
+            font-size: 12px;
+            color: #2a5298;
+        }
+        .multiselect-options {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #2a2a2a;
+            border: 2px solid #2a5298;
+            border-top: none;
+            border-radius: 0 0 5px 5px;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 1000;
+            display: none;
+        }
+        .multiselect-options.open {
+            display: block;
+        }
+        .multiselect-option {
+            padding: 8px 12px;
+            cursor: pointer;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .multiselect-option:hover {
+            background: #3a3a3a;
+        }
+        .multiselect-option input[type="checkbox"] {
+            margin: 0;
         }
 
         .category-filter {
@@ -97,7 +175,7 @@ def generate_html(items_data, output_dir='output'):
         .category-filter label {
             cursor: pointer;
             font-weight: 500;
-            color: #555;
+            color: #cccccc;
         }
         .items-grid {
             display: grid;
@@ -106,19 +184,19 @@ def generate_html(items_data, output_dir='output'):
             padding: 6px;
         }
         .item-card {
-            background: white;
+            background: #1a1a1a;
             border-radius: 5px;
             overflow: hidden;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 1px 4px rgba(255,255,255,0.1);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             padding: 5px;
             text-decoration: none;
             display: block;
-            color: inherit;
+            color: #ffffff;
         }
         .item-card:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 7px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 7px rgba(255,255,255,0.2);
             cursor: pointer;
         }
         .item-image {
@@ -146,7 +224,7 @@ def generate_html(items_data, output_dir='output'):
         .item-name {
             font-size: 14px;
             font-weight: bold;
-            color: #2a5298;
+            color: #e0e0e0;
             margin-bottom: 2px;
             text-align: center;
             line-height: 1.1;
@@ -154,7 +232,7 @@ def generate_html(items_data, output_dir='output'):
         }
         .item-category {
             font-size: 11px;
-            color: #888;
+            color: #aaaaaa;
             text-align: center;
             margin-bottom: 4px;
             font-style: italic;
@@ -167,52 +245,20 @@ def generate_html(items_data, output_dir='output'):
             display: flex;
             justify-content: space-between;
             padding: 1px 0;
-            border-bottom: 1px solid #f0f0f0;
+            border-bottom: 1px solid #333333;
         }
         .item-details div:last-child {
             border-bottom: none;
         }
         .detail-label {
             font-weight: 600;
-            color: #555;
+            color: #cccccc;
         }
         .detail-value {
-            color: #777;
+            color: #ffffff;
             font-weight: 500;
         }
-        .stats-summary {
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        .stats-summary h2 {
-            color: #2a5298;
-            font-size: 1.2em;
-            margin-bottom: 10px;
-        }
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 10px;
-        }
-        .stat-item {
-            padding: 8px;
-            background: #f5f5f5;
-            border-radius: 5px;
-        }
-        .stat-label {
-            font-size: 12px;
-            color: #666;
-            margin-bottom: 3px;
-        }
-        .stat-value {
-            font-size: 20px;
-            font-weight: bold;
-            color: #2a5298;
-        }
+
         @media (max-width: 768px) {
             .items-grid {
                 grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
@@ -225,11 +271,7 @@ def generate_html(items_data, output_dir='output'):
     <div class="container">
         <h1>Arc Raiders - Items Database</h1>
         
-        <div class="stats-summary">
-            <h2>Collection Statistics</h2>
-            <div class="stats-grid" id="statsGrid"></div>
-        </div>
-        
+
         <div class="controls">
             <div class="controls-row">
                 <label for="sortBy">Sort by:</label>
@@ -250,6 +292,20 @@ def generate_html(items_data, output_dir='output'):
                     <div id="categoryCheckboxes" style="display: flex; gap: 15px; flex-wrap: wrap;"></div>
                 </div>
             </div>
+            <div class="controls-row" style="margin-top: 10px;">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <strong style="color: #2a5298;">Show Rarities:</strong>
+                    <div class="custom-multiselect" id="rarityMultiselect">
+                        <div class="multiselect-display" onclick="toggleRarityDropdown()">
+                            <span id="rarityDisplayText">Select rarities...</span>
+                        </div>
+                        <div class="multiselect-options" id="rarityOptions">
+                        </div>
+                    </div>
+                    <button onclick="selectAllRarities()" style="padding: 5px 15px; cursor: pointer; background: #2a5298; color: white; border: none; border-radius: 4px;">Select All</button>
+                    <button onclick="selectNoneRarities()" style="padding: 5px 15px; cursor: pointer; background: #666; color: white; border: none; border-radius: 4px;">Select None</button>
+                </div>
+            </div>
         </div>
         
         <div class="items-grid" id="itemsGrid"></div>
@@ -258,6 +314,7 @@ def generate_html(items_data, output_dir='output'):
     <script>
         const itemsData = """ + items_json + """;
         let visibleCategories = new Set();
+        let visibleRarities = new Set();
         
         function initializeCategoryFilters() {
             const checkboxContainer = document.getElementById('categoryCheckboxes');
@@ -285,6 +342,88 @@ def generate_html(items_data, output_dir='output'):
                 checkboxContainer.appendChild(wrapper);
             });
         }
+        
+        function initializeRarityFilters() {
+            const rarityOptions = document.getElementById('rarityOptions');
+            
+            // Get all unique rarities from items
+            const rarities = new Set();
+            Object.values(itemsData).forEach(categoryItems => {
+                categoryItems.forEach(item => {
+                    if (item.Rarity) {
+                        rarities.add(item.Rarity);
+                    }
+                });
+            });
+            
+            const sortedRarities = Array.from(rarities).sort();
+            
+            // Initialize all rarities except Legendary as visible
+            sortedRarities.forEach(rarity => {
+                if (rarity !== 'Legendary') {
+                    visibleRarities.add(rarity);
+                }
+            });
+            
+            // Create options for the custom multiselect
+            sortedRarities.forEach(rarity => {
+                const optionDiv = document.createElement('div');
+                optionDiv.className = 'multiselect-option';
+                
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.id = `rarity-${rarity}`;
+                checkbox.checked = rarity !== 'Legendary';
+                checkbox.onchange = () => {
+                    if (checkbox.checked) {
+                        visibleRarities.add(rarity);
+                    } else {
+                        visibleRarities.delete(rarity);
+                    }
+                    updateRarityDisplay();
+                    renderItems();
+                };
+                
+                const label = document.createElement('label');
+                label.htmlFor = `rarity-${rarity}`;
+                label.textContent = rarity;
+                label.style.cursor = 'pointer';
+                
+                optionDiv.appendChild(checkbox);
+                optionDiv.appendChild(label);
+                rarityOptions.appendChild(optionDiv);
+            });
+            
+            updateRarityDisplay();
+        }
+        
+        function toggleRarityDropdown() {
+            const options = document.getElementById('rarityOptions');
+            options.classList.toggle('open');
+        }
+        
+        function updateRarityDisplay() {
+            const displayText = document.getElementById('rarityDisplayText');
+            const selectedRarities = Array.from(visibleRarities);
+            
+            if (selectedRarities.length === 0) {
+                displayText.textContent = 'No rarities selected';
+            } else if (selectedRarities.length === 1) {
+                displayText.textContent = selectedRarities[0];
+            } else if (selectedRarities.length <= 3) {
+                displayText.textContent = selectedRarities.join(', ');
+            } else {
+                displayText.textContent = `${selectedRarities.length} rarities selected`;
+            }
+        }
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const multiselect = document.getElementById('rarityMultiselect');
+            if (!multiselect.contains(event.target)) {
+                document.getElementById('rarityOptions').classList.remove('open');
+            }
+        });
         
         function toggleCategory(category) {
             const checkbox = document.getElementById(`cat-${category}`);
@@ -316,37 +455,33 @@ def generate_html(items_data, output_dir='output'):
             renderItems();
         }
         
-        function updateStats() {
-            const statsGrid = document.getElementById('statsGrid');
-            statsGrid.innerHTML = '';
+        function selectAllRarities() {
+            visibleRarities.clear();
             
-            let totalItems = 0;
-            let visibleItems = 0;
-            
-            Object.entries(itemsData).forEach(([category, items]) => {
-                totalItems += items.length;
-                if (visibleCategories.has(category)) {
-                    visibleItems += items.length;
-                }
+            const checkboxes = document.querySelectorAll('#rarityOptions input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = true;
+                const rarity = checkbox.id.replace('rarity-', '');
+                visibleRarities.add(rarity);
             });
             
-            const stats = [
-                { label: 'Total Items', value: totalItems },
-                { label: 'Visible Items', value: visibleItems },
-                { label: 'Categories', value: Object.keys(itemsData).length },
-                { label: 'Active Categories', value: visibleCategories.size }
-            ];
-            
-            stats.forEach(stat => {
-                const statDiv = document.createElement('div');
-                statDiv.className = 'stat-item';
-                statDiv.innerHTML = `
-                    <div class="stat-label">${stat.label}</div>
-                    <div class="stat-value">${stat.value}</div>
-                `;
-                statsGrid.appendChild(statDiv);
-            });
+            updateRarityDisplay();
+            renderItems();
         }
+        
+        function selectNoneRarities() {
+            visibleRarities.clear();
+            
+            const checkboxes = document.querySelectorAll('#rarityOptions input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            
+            updateRarityDisplay();
+            renderItems();
+        }
+        
+
         
         function parseNumber(value) {
             if (!value) return 0;
@@ -359,7 +494,11 @@ def generate_html(items_data, output_dir='output'):
             Object.entries(itemsData).forEach(([category, items]) => {
                 if (visibleCategories.has(category)) {
                     items.forEach(item => {
-                        allItems.push({ ...item, category: category });
+                        // Check if item's rarity is visible (or if no rarity, show it)
+                        const itemRarity = item.Rarity || 'Unknown';
+                        if (!item.Rarity || visibleRarities.has(itemRarity)) {
+                            allItems.push({ ...item, category: category });
+                        }
                     });
                 }
             });
@@ -441,14 +580,14 @@ def generate_html(items_data, output_dir='output'):
                     // Use the original gradient style from the wiki
                     imageStyle = item.image_gradient;
                 } else {
-                    // Create a dramatic gradient effect based on rarity color
+                    // Create a dramatic gradient effect based on rarity color that transitions to almost black
                     const gradientColor = backgroundColor === 'white' ? '#f5f5f5' : backgroundColor;
                     if (gradientColor === '#f5f5f5') {
-                        // For white/gray, create a light to dark gradient
-                        imageStyle = `background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 50%, #c0c0c0 100%);`;
+                        // For white/gray, create a light to almost black gradient
+                        imageStyle = `background: linear-gradient(135deg, #ffffff 0%, #666666 50%, #1a1a1a 100%);`;
                     } else {
-                        // For colored rarities, create a bright to dark gradient
-                        imageStyle = `background: linear-gradient(135deg, ${gradientColor} 0%, ${gradientColor}80 50%, ${gradientColor}40 100%);`;
+                        // For colored rarities, create a bright to almost black gradient
+                        imageStyle = `background: linear-gradient(135deg, ${gradientColor} 0%, ${gradientColor}60 50%, #1a1a1a 100%);`;
                     }
                 }
                 
@@ -504,12 +643,12 @@ def generate_html(items_data, output_dir='output'):
                 
                 grid.appendChild(card);
             });
-            
-            updateStats();
+
         }
         
         // Initialize
         initializeCategoryFilters();
+        initializeRarityFilters();
         renderItems();
     </script>
 </body>
