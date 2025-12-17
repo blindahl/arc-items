@@ -161,6 +161,19 @@
       "Sell Price": "7000"
     },
     {
+      "name": "Burnt-Out Candles",
+      "url": "https://arcraiders.wiki/wiki/Burnt-Out_Candles",
+      "category": "Trinkets",
+      "Rarity": "Common",
+      "background_color": "#9d9d9d",
+      "image_url": "https://arcraiders.wiki/w/images/thumb/8/89/ItemCategory_Trinket.png/20px-ItemCategory_Trinket.png.webp",
+      "image_path": "images/Trinkets_Burnt-Out Candles.png",
+      "Can Be Found In": "ResidentialOld World",
+      "Weight": "0.2",
+      "Stack Size": "15",
+      "Sell Price": "640"
+    },
+    {
       "name": "Cat Bed",
       "url": "https://arcraiders.wiki/wiki/Cat_Bed",
       "category": "Trinkets",
@@ -2838,7 +2851,7 @@
       "image_url": "https://arcraiders.wiki/w/images/thumb/b/be/Rattler-Level1.png/348px-Rattler-Level1.png.webp",
       "image_path": "images/Weapons_Rattler.png",
       "Ammo": "Medium Ammo",
-      "Magazine Size": "10 | 14 | 18 | 22",
+      "Magazine Size": "12 | 16 | 20 | 24",
       "Firing Mode": "Fully-Automatic",
       "ARC Armor Penetration": "Moderate",
       "Damage": "9",
@@ -2905,7 +2918,7 @@
       "image_url": "https://arcraiders.wiki/w/images/thumb/a/ac/Bettina.png/348px-Bettina.png.webp",
       "image_path": "images/Weapons_Bettina.png",
       "Ammo": "Heavy Ammo",
-      "Magazine Size": "20",
+      "Magazine Size": "22",
       "Firing Mode": "Fully-Automatic",
       "ARC Armor Penetration": "Strong",
       "Damage": "14",
