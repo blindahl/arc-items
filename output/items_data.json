@@ -773,8 +773,8 @@
       "name": "Blue Gate Cellar Key",
       "url": "https://arcraiders.wiki/wiki/Blue_Gate_Cellar_Key",
       "category": "Loot",
-      "Rarity": "Uncommon",
-      "background_color": "#1eff00",
+      "Rarity": "Rare",
+      "background_color": "#0070dd",
       "image_url": "https://arcraiders.wiki/w/images/thumb/5/5f/Blue_Gate_Village_Key.png/348px-Blue_Gate_Village_Key.png.webp",
       "image_path": "images/Loot_Blue Gate Cellar Key.png",
       "Weight": "0.25",
@@ -1398,6 +1398,18 @@
       "Sell Price": "1000"
     },
     {
+      "name": "Fossilized Lightning",
+      "url": "https://arcraiders.wiki/wiki/Fossilized_Lightning",
+      "category": "Loot",
+      "Rarity": "Epic",
+      "background_color": "#a335ee",
+      "image_url": "https://arcraiders.wiki/w/images/thumb/8/81/Fossilized_Lightning.png/348px-Fossilized_Lightning.png.webp",
+      "image_path": "images/Loot_Fossilized Lightning.png",
+      "Can Be Found In": "Nature",
+      "Weight": "0.25",
+      "Sell Price": "4000"
+    },
+    {
       "name": "Frequency Modulation Box",
       "url": "https://arcraiders.wiki/wiki/Frequency_Modulation_Box",
       "category": "Loot",
@@ -1916,8 +1928,8 @@
       "name": "Pop Trigger",
       "url": "https://arcraiders.wiki/wiki/Pop_Trigger",
       "category": "Loot",
-      "Rarity": "Common",
-      "background_color": "#9d9d9d",
+      "Rarity": "Uncommon",
+      "background_color": "#1eff00",
       "image_url": "https://arcraiders.wiki/w/images/thumb/c/c6/Pop_Trigger.png/348px-Pop_Trigger.png.webp",
       "image_path": "images/Loot_Pop Trigger.png",
       "Can Be Found In": "ARC",
@@ -3992,6 +4004,18 @@
       "Sell Price": "270"
     },
     {
+      "name": "Fireworks Box",
+      "url": "https://arcraiders.wiki/wiki/Fireworks_Box",
+      "category": "Quick Use",
+      "Rarity": "Rare",
+      "background_color": "#0070dd",
+      "image_url": "https://arcraiders.wiki/w/images/thumb/0/0f/Fireworks_Box.png/348px-Fireworks_Box.png.webp",
+      "image_path": "images/Quick Use_Fireworks Box.png",
+      "Weight": "0.5",
+      "Stack Size": "1",
+      "Sell Price": "2000"
+    },
+    {
       "name": "Remote Raider Flare",
       "url": "https://arcraiders.wiki/wiki/Remote_Raider_Flare",
       "category": "Quick Use",
@@ -4027,6 +4051,19 @@
       "Weight": "0.5",
       "Stack Size": "1",
       "Sell Price": "640"
+    },
+    {
+      "name": "Firecracker",
+      "url": "https://arcraiders.wiki/wiki/Firecracker",
+      "category": "Quick Use",
+      "Rarity": "Common",
+      "background_color": "#9d9d9d",
+      "image_url": "https://arcraiders.wiki/w/images/thumb/8/86/Firecracker.png/348px-Firecracker.png.webp",
+      "image_path": "images/Quick Use_Firecracker.png",
+      "Weight": "0.05",
+      "Stack Size": "5",
+      "Sell Price": "270",
+      "Duration": "7.5s"
     },
     {
       "name": "Flame Spray",
@@ -4085,6 +4122,19 @@
       "background_color": "#1eff00",
       "image_url": "https://arcraiders.wiki/w/images/thumb/6/6d/Recorder.png/348px-Recorder.png.webp",
       "image_path": "images/Quick Use_Recorder.png",
+      "Can Be Found In": "Residential",
+      "Weight": "0.2",
+      "Stack Size": "1",
+      "Sell Price": "1000"
+    },
+    {
+      "name": "Shaker",
+      "url": "https://arcraiders.wiki/wiki/Shaker",
+      "category": "Quick Use",
+      "Rarity": "Uncommon",
+      "background_color": "#1eff00",
+      "image_url": "https://arcraiders.wiki/w/images/thumb/3/32/Shaker.webp/348px-Shaker.webp",
+      "image_path": "images/Quick Use_Shaker.png",
       "Can Be Found In": "Residential",
       "Weight": "0.2",
       "Stack Size": "1",
