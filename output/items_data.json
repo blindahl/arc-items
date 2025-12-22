@@ -3438,7 +3438,7 @@
       "Weapon Slots": "2",
       "Weight Limit": "70.0",
       "Shield Compatibility": "Light",
-      "Weight": "3",
+      "Weight": "3.0",
       "Sell Price": "5000"
     },
     {
@@ -3492,8 +3492,8 @@
       "Deployable Utility Slots": "3",
       "Weight Limit": "60.0",
       "Shield Compatibility": "Light Shield",
-      "Weight": "3",
-      "Sell Price": "3000"
+      "Weight": "3.0",
+      "Sell Price": "5000"
     },
     {
       "name": "Tactical Mk. 3 (Defensive)",
@@ -3508,7 +3508,7 @@
       "Quick Use Slots": "5",
       "Weapon Slots": "2",
       "Weight Limit": "60.0",
-      "Shield Compatibility": "Light,Medium,Heavy",
+      "Shield Compatibility": "Light, Medium, Heavy",
       "Weight": "5.0",
       "Sell Price": "5000"
     },
