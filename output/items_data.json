@@ -4073,7 +4073,7 @@
       "background_color": "#1eff00",
       "image_url": "https://arcraiders.wiki/w/images/thumb/7/73/Flame_Spray.png/348px-Flame_Spray.png.webp",
       "image_path": "images/Quick Use_Flame Spray.png",
-      "Weight": "1",
+      "Weight": "1.0",
       "Stack Size": "1",
       "Sell Price": "2000",
       "Damage": "10/s"
