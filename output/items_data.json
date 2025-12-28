@@ -1407,6 +1407,7 @@
       "image_path": "images/Loot_Fossilized Lightning.png",
       "Can Be Found In": "Nature",
       "Weight": "0.25",
+      "Stack Size": "1",
       "Sell Price": "4000"
     },
     {
@@ -2365,7 +2366,7 @@
       "image_url": "https://arcraiders.wiki/w/images/3/33/Rusty_ARC_Steel.png",
       "image_path": "images/Loot_Rusty ARC Steel.png",
       "Can Be Found In": "ARC",
-      "Weight": "1",
+      "Weight": "1.0",
       "Stack Size": "3",
       "Sell Price": "640"
     },
