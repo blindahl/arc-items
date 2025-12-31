@@ -620,7 +620,7 @@
       "image_url": "https://arcraiders.wiki/w/images/thumb/2/29/ARC_Flex_Rubber.png/348px-ARC_Flex_Rubber.png.webp",
       "image_path": "images/Loot_ARC Flex Rubber.png",
       "Can Be Found In": "ARC",
-      "Weight": "1",
+      "Weight": "1.0",
       "Stack Size": "3",
       "Sell Price": "1000"
     },
@@ -676,7 +676,7 @@
       "image_url": "https://arcraiders.wiki/w/images/thumb/7/72/ARC_Synthetic_Resin.png/348px-ARC_Synthetic_Resin.png.webp",
       "image_path": "images/Loot_ARC Synthetic Resin.png",
       "Can Be Found In": "ARC",
-      "Weight": "1",
+      "Weight": "1.0",
       "Stack Size": "3",
       "Sell Price": "1000"
     },
@@ -884,7 +884,7 @@
     },
     {
       "name": "Buried City Residential Mastery Key",
-      "url": "https://arcraiders.wiki/wiki/Buried_City_Residential_Mastery_Key",
+      "url": "https://arcraiders.wiki/wiki/Buried_City_Residential_Master_Key",
       "category": "Loot",
       "Rarity": "Uncommon",
       "background_color": "#1eff00",
@@ -2800,7 +2800,7 @@
       "background_color": "#0070dd",
       "image_url": "https://arcraiders.wiki/w/images/thumb/c/c7/Voltage_Converter.png/348px-Voltage_Converter.png.webp",
       "image_path": "images/Loot_Voltage Converter.png",
-      "Can Be Found In": "Technological",
+      "Can Be Found In": "Electrical",
       "Weight": "0.3",
       "Stack Size": "5",
       "Sell Price": "500"
