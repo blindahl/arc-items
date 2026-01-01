@@ -117,7 +117,9 @@
       "image_path": "images/Grenades_Rubber Duck.png",
       "Weight": "0.3",
       "Stack Size": "15",
-      "Sell Price": "1000"
+      "Sell Price": "1000",
+      "Displays in the Raider Den": "yes",
+      "Raider Den Item Type": "small"
     },
     {
       "name": "Air Freshener",
@@ -184,7 +186,9 @@
       "Can Be Found In": "CommercialResidential",
       "Weight": "0.5",
       "Stack Size": "3",
-      "Sell Price": "1000"
+      "Sell Price": "1000",
+      "Displays in the Raider Den": "yes",
+      "Raider Den Item Type": "floor"
     },
     {
       "name": "Coffee Pot",
@@ -1551,7 +1555,9 @@
       "Can Be Found In": "Residential",
       "Weight": "2.0",
       "Stack Size": "3",
-      "Sell Price": "1000"
+      "Sell Price": "1000",
+      "Displays in the Raider Den": "yes",
+      "Raider Den Item Type": "big"
     },
     {
       "name": "Ice Cream Scooper",
@@ -3159,29 +3165,6 @@
       "Sell Price All Levels": "2900,5000,7000,10000"
     },
     {
-      "name": "Anvil",
-      "url": "https://arcraiders.wiki/wiki/Anvil",
-      "category": "Weapons",
-      "Rarity": "Uncommon",
-      "background_color": "#1eff00",
-      "image_url": "https://arcraiders.wiki/w/images/thumb/0/00/Anvil-Level1.png/348px-Anvil-Level1.png.webp",
-      "image_path": "images/Weapons_Anvil.png",
-      "Ammo": "Heavy Ammo",
-      "Magazine Size": "6",
-      "Firing Mode": "Single-Action",
-      "ARC Armor Penetration": "Strong",
-      "Damage": "40",
-      "Fire Rate": "16.3",
-      "Headshot Multiplier": "2.5x",
-      "Range": "50.2",
-      "Stability": "75.2",
-      "Agility": "69.1",
-      "Stealth": "10",
-      "Weight": "5.0",
-      "Sell Price": "5000",
-      "Sell Price All Levels": "5000,7000,10000,13000"
-    },
-    {
       "name": "Venator",
       "url": "https://arcraiders.wiki/wiki/Venator",
       "category": "Weapons",
@@ -3204,6 +3187,29 @@
       "Weight": "5.0",
       "Sell Price": "7000",
       "Sell Price All Levels": "7000,10000,13000,17000"
+    },
+    {
+      "name": "Anvil",
+      "url": "https://arcraiders.wiki/wiki/Anvil",
+      "category": "Weapons",
+      "Rarity": "Uncommon",
+      "background_color": "#1eff00",
+      "image_url": "https://arcraiders.wiki/w/images/thumb/0/00/Anvil-Level1.png/348px-Anvil-Level1.png.webp",
+      "image_path": "images/Weapons_Anvil.png",
+      "Ammo": "Heavy Ammo",
+      "Magazine Size": "6",
+      "Firing Mode": "Single-Action",
+      "ARC Armor Penetration": "Strong",
+      "Damage": "40",
+      "Fire Rate": "16.3",
+      "Headshot Multiplier": "2.5x",
+      "Range": "50.2",
+      "Stability": "75.2",
+      "Agility": "69.1",
+      "Stealth": "10",
+      "Weight": "5.0",
+      "Sell Price": "5000",
+      "Sell Price All Levels": "5000,7000,10000,13000"
     },
     {
       "name": "Torrente",
