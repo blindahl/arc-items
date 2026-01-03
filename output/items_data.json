@@ -515,7 +515,7 @@
       "image_url": "https://arcraiders.wiki/w/images/thumb/2/25/Advanced_Mechanical_Components.png/348px-Advanced_Mechanical_Components.png.webp",
       "image_path": "images/Loot_Advanced Mechanical Components.png",
       "Can Be Found In": "Mechanical",
-      "Weight": "1",
+      "Weight": "1.0",
       "Stack Size": "5",
       "Sell Price": "1750"
     },
@@ -1227,6 +1227,7 @@
       "image_path": "images/Loot_Damaged Wasp Driver.png",
       "Can Be Found In": "ARC",
       "Weight": "0.25",
+      "Stack Size": "3",
       "Sell Price": "270"
     },
     {
@@ -1541,7 +1542,7 @@
       "image_path": "images/Loot_Household Cleaner.png",
       "Can Be Found In": "Residential",
       "Weight": "0.8",
-      "Stack Size": "5",
+      "Stack Size": "3",
       "Sell Price": "640"
     },
     {
@@ -1646,7 +1647,7 @@
       "image_url": "https://arcraiders.wiki/w/images/thumb/e/e5/Laboratory_Reagents.png/348px-Laboratory_Reagents.png.webp",
       "image_path": "images/Loot_Laboratory Reagents.png",
       "Can Be Found In": "Medical",
-      "Weight": "3",
+      "Weight": "3.0",
       "Stack Size": "3",
       "Sell Price": "2000"
     },
@@ -2359,7 +2360,7 @@
       "image_url": "https://arcraiders.wiki/w/images/thumb/1/1a/Rusted_Shut_Medical_Kit.png/348px-Rusted_Shut_Medical_Kit.png.webp",
       "image_path": "images/Loot_Rusted Shut Medical Kit.png",
       "Can Be Found In": "Medical",
-      "Weight": "3",
+      "Weight": "3.0",
       "Stack Size": "3",
       "Sell Price": "2000"
     },
@@ -2872,7 +2873,10 @@
       "Stealth": "26",
       "Weight": "7.0",
       "Sell Price": "840",
-      "Sell Price All Levels": "840,2000,3000,5000"
+      "Sell Price All Levels": "840,2000,3000,5000",
+      "Level II": "25% Increased Bullet Velocity13% Reduced Reload Time+10 Durability",
+      "Level III": "50% Increased Bullet Velocity26% Reduced Reload Time+20 Durability",
+      "Level IV": "75% Increased Bullet Velocity40% Reduced Reload Time+30 Durability"
     },
     {
       "name": "Rattler",
@@ -2895,7 +2899,10 @@
       "Stealth": "14",
       "Weight": "6.0",
       "Sell Price": "1750",
-      "Sell Price All Levels": "1750,3000,5000,7000"
+      "Sell Price All Levels": "1750,3000,5000,7000",
+      "Level II": "+4 Magazine Size+10 Durability",
+      "Level III": "+8 Magazine Size+20 Durability",
+      "Level IV": "+12 Magazine Size+30 Durability"
     },
     {
       "name": "Arpeggio",
@@ -2917,7 +2924,10 @@
       "Stealth": "14",
       "Weight": "7.0",
       "Sell Price": "5500",
-      "Sell Price All Levels": "5500,8000,11500,15000"
+      "Sell Price All Levels": "5500,8000,11500,15000",
+      "Level II": "20% Increased Fire Rate12.5% Reduced Reload Time+10 Durability",
+      "Level III": "40% Increased Fire Rate25% Reduced Reload Time+20 Durability",
+      "Level IV": "60% Increased Fire Rate50% Reduced Reload Time+30 Durability"
     },
     {
       "name": "Tempest",
@@ -2939,7 +2949,10 @@
       "Stealth": "14",
       "Weight": "11.0",
       "Sell Price": "13000",
-      "Sell Price All Levels": "13000,17000,22000,27000"
+      "Sell Price All Levels": "13000,17000,22000,27000",
+      "Level II": "16.6% Reduced Horizontal Recoil13% Reduced Reload Time+10 Durability",
+      "Level III": "33.3% Reduced Horizontal Recoil26% Reduced Reload Time+20 Durability",
+      "Level IV": "50% Reduced Horizontal Recoil40% Reduced Reload Time+30 Durability"
     },
     {
       "name": "Bettina",
@@ -2961,7 +2974,10 @@
       "Stealth": "14",
       "Weight": "11.0",
       "Sell Price": "8000",
-      "Sell Price All Levels": "8000,11000,14000,18000"
+      "Sell Price All Levels": "8000,11000,14000,18000",
+      "Level II": "5% Increased Fire Rate11.1% Reduced Reload Time+10 Durability",
+      "Level III": "10% Increased Fire Rate22.2% Reduced Reload Time+20 Durability",
+      "Level IV": "15% Increased Fire Rate33.3% Reduced Reload Time+30 Durability"
     },
     {
       "name": "Ferro",
@@ -2984,7 +3000,10 @@
       "Stealth": "8",
       "Weight": "8.0",
       "Sell Price": "475",
-      "Sell Price All Levels": "475,1000,2000,2900"
+      "Sell Price All Levels": "475,1000,2000,2900",
+      "Level II": "13% Reduced Reload Time+10 Durability",
+      "Level III": "26% Reduced Reload Time+20 Durability",
+      "Level IV": "39% Reduced Reload Time+30 Durability"
     },
     {
       "name": "Renegade",
@@ -3051,7 +3070,10 @@
       "Stealth": "19",
       "Weight": "5.0",
       "Sell Price": "800",
-      "Sell Price All Levels": "800,2000,3000,5000"
+      "Sell Price All Levels": "800,2000,3000,5000",
+      "Level II": "16.6% Reduced Horizontal Recoil13% Reduced Reload Time+10 Durability",
+      "Level III": "33.3% Reduced Horizontal Recoil26% Reduced Reload Time+20 Durability",
+      "Level IV": "50% Reduced Horizontal Recoil40% Reduced Reload Time+30 Durability"
     },
     {
       "name": "Bobcat",
@@ -3562,6 +3584,7 @@
       "image_path": "images/Shields_Light Shield.png",
       "Shield Charge": "40",
       "Damage Mitigation": "40%",
+      "Movement Penalty": "None",
       "Weight": "5.0",
       "Sell Price": "640"
     },
