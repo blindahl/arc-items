@@ -117,9 +117,7 @@
       "image_path": "images/Grenades_Rubber Duck.png",
       "Weight": "0.3",
       "Stack Size": "15",
-      "Sell Price": "1000",
-      "Displays in the Raider Den": "yes",
-      "Raider Den Item Type": "small"
+      "Sell Price": "1000"
     },
     {
       "name": "Air Freshener",
@@ -168,7 +166,7 @@
       "category": "Trinkets",
       "Rarity": "Common",
       "background_color": "#9d9d9d",
-      "image_url": "https://arcraiders.wiki/w/images/thumb/6/64/Burnt-out_Candles.png/348px-Burnt-out_Candles.png.webp",
+      "image_url": "https://arcraiders.wiki/w/images/thumb/0/0a/Burnt-Out_Candles.png/348px-Burnt-Out_Candles.png.webp",
       "image_path": "images/Trinkets_Burnt-Out Candles.png",
       "Can Be Found In": "ResidentialOld World",
       "Weight": "0.2",
@@ -186,9 +184,7 @@
       "Can Be Found In": "CommercialResidential",
       "Weight": "0.5",
       "Stack Size": "3",
-      "Sell Price": "1000",
-      "Displays in the Raider Den": "yes",
-      "Raider Den Item Type": "floor"
+      "Sell Price": "1000"
     },
     {
       "name": "Coffee Pot",
@@ -611,7 +607,7 @@
       "image_url": "https://arcraiders.wiki/w/images/thumb/e/e9/ARC_Coolant.png/348px-ARC_Coolant.png.webp",
       "image_path": "images/Loot_ARC Coolant.png",
       "Can Be Found In": "ARC",
-      "Weight": "1",
+      "Weight": "1.0",
       "Stack Size": "3",
       "Sell Price": "1000"
     },
@@ -650,7 +646,7 @@
       "image_url": "https://arcraiders.wiki/w/images/thumb/0/02/ARC_Performance_Steel.png/348px-ARC_Performance_Steel.png.webp",
       "image_path": "images/Loot_ARC Performance Steel.png",
       "Can Be Found In": "ARC",
-      "Weight": "1",
+      "Weight": "1.0",
       "Stack Size": "3",
       "Sell Price": "1000"
     },
@@ -719,7 +715,7 @@
       "image_url": "https://arcraiders.wiki/w/images/thumb/0/06/Bastion_Cell.png/348px-Bastion_Cell.png.webp",
       "image_path": "images/Loot_Bastion Cell.png",
       "Can Be Found In": "ARC",
-      "Weight": "1",
+      "Weight": "1.0",
       "Stack Size": "3",
       "Sell Price": "5000"
     },
@@ -997,7 +993,7 @@
       "image_url": "https://arcraiders.wiki/w/images/thumb/4/40/Coolant.png/348px-Coolant.png.webp",
       "image_path": "images/Loot_Coolant.png",
       "Can Be Found In": "Mechanical",
-      "Weight": "2",
+      "Weight": "2.0",
       "Stack Size": "3",
       "Sell Price": "1000"
     },
@@ -1136,7 +1132,7 @@
       "image_path": "images/Loot_Damaged ARC Powercell.png",
       "Can Be Found In": "ARC",
       "Weight": "0.25",
-      "Stack Size": "3",
+      "Stack Size": "5",
       "Sell Price": "293"
     },
     {
@@ -1148,7 +1144,7 @@
       "image_url": "https://arcraiders.wiki/w/images/thumb/d/d8/Damaged_Fireball_Burner.png/348px-Damaged_Fireball_Burner.png.webp",
       "image_path": "images/Loot_Damaged Fireball Burner.png",
       "Can Be Found In": "ARC",
-      "Weight": "1",
+      "Weight": "1.0",
       "Stack Size": "3",
       "Sell Price": "270"
     },
@@ -1252,7 +1248,7 @@
       "image_url": "https://arcraiders.wiki/w/images/thumb/3/37/Degraded_ARC_Rubber.png/348px-Degraded_ARC_Rubber.png.webp",
       "image_path": "images/Loot_Degraded ARC Rubber.png",
       "Can Be Found In": "ARC",
-      "Weight": "1",
+      "Weight": "1.0",
       "Stack Size": "3",
       "Sell Price": "640"
     },
@@ -1291,7 +1287,7 @@
       "image_url": "https://arcraiders.wiki/w/images/0/0b/Dried-Out_ARC_Resin.png",
       "image_path": "images/Loot_Dried-Out ARC Resin.png",
       "Can Be Found In": "ARC",
-      "Weight": "1",
+      "Weight": "1.0",
       "Stack Size": "3",
       "Sell Price": "640"
     },
@@ -1475,7 +1471,7 @@
       "background_color": "#1eff00",
       "image_url": "https://arcraiders.wiki/w/images/thumb/8/88/Garlic_Press.png/348px-Garlic_Press.png.webp",
       "image_path": "images/Loot_Garlic Press.png",
-      "Can Be Found In": "CommercialResidential",
+      "Can Be Found In": "ResidentialCommercial",
       "Weight": "0.8",
       "Stack Size": "3",
       "Sell Price": "1000"
@@ -1556,9 +1552,7 @@
       "Can Be Found In": "Residential",
       "Weight": "2.0",
       "Stack Size": "3",
-      "Sell Price": "1000",
-      "Displays in the Raider Den": "yes",
-      "Raider Den Item Type": "big"
+      "Sell Price": "1000"
     },
     {
       "name": "Ice Cream Scooper",
@@ -1582,7 +1576,7 @@
       "image_url": "https://arcraiders.wiki/w/images/thumb/a/a0/Impure_ARC_Coolant.png/348px-Impure_ARC_Coolant.png.webp",
       "image_path": "images/Loot_Impure ARC Coolant.png",
       "Can Be Found In": "ARC",
-      "Weight": "1",
+      "Weight": "1.0",
       "Stack Size": "3",
       "Sell Price": "640"
     },
@@ -1740,7 +1734,7 @@
       "image_url": "https://arcraiders.wiki/w/images/thumb/9/94/Mechanical_Components.png/348px-Mechanical_Components.png.webp",
       "image_path": "images/Loot_Mechanical Components.png",
       "Can Be Found In": "Mechanical",
-      "Weight": "0.8",
+      "Weight": "0.5",
       "Stack Size": "10",
       "Sell Price": "640"
     },
@@ -2166,7 +2160,7 @@
       "image_url": "https://arcraiders.wiki/w/images/thumb/e/ef/Rocketeer_Driver.png/348px-Rocketeer_Driver.png.webp",
       "image_path": "images/Loot_Rocketeer Driver.png",
       "Can Be Found In": "ARC",
-      "Weight": "1",
+      "Weight": "1.0",
       "Stack Size": "3",
       "Sell Price": "5000"
     },
@@ -2333,7 +2327,7 @@
       "background_color": "#1eff00",
       "image_url": "https://arcraiders.wiki/w/images/thumb/b/bf/Rusted_Bolts.png/348px-Rusted_Bolts.png.webp",
       "image_path": "images/Loot_Rusted Bolts.png",
-      "Can Be Found In": "MechanicalIndustrial",
+      "Can Be Found In": "IndustrialMechanical",
       "Weight": "0.8",
       "Stack Size": "3",
       "Sell Price": "640"
@@ -2563,7 +2557,7 @@
       "background_color": "#0070dd",
       "image_url": "https://arcraiders.wiki/w/images/thumb/2/26/Spring_Cushion.png/348px-Spring_Cushion.png.webp",
       "image_path": "images/Loot_Spring Cushion.png",
-      "Can Be Found In": "CommercialResidential",
+      "Can Be Found In": "ResidentialCommercial",
       "Weight": "2.0",
       "Stack Size": "3",
       "Sell Price": "2000"
@@ -2873,10 +2867,7 @@
       "Stealth": "26",
       "Weight": "7.0",
       "Sell Price": "840",
-      "Sell Price All Levels": "840,2000,3000,5000",
-      "Level II": "25% Increased Bullet Velocity13% Reduced Reload Time+10 Durability",
-      "Level III": "50% Increased Bullet Velocity26% Reduced Reload Time+20 Durability",
-      "Level IV": "75% Increased Bullet Velocity40% Reduced Reload Time+30 Durability"
+      "Sell Price All Levels": "840,2000,3000,5000"
     },
     {
       "name": "Rattler",
@@ -2899,10 +2890,7 @@
       "Stealth": "14",
       "Weight": "6.0",
       "Sell Price": "1750",
-      "Sell Price All Levels": "1750,3000,5000,7000",
-      "Level II": "+4 Magazine Size+10 Durability",
-      "Level III": "+8 Magazine Size+20 Durability",
-      "Level IV": "+12 Magazine Size+30 Durability"
+      "Sell Price All Levels": "1750,3000,5000,7000"
     },
     {
       "name": "Arpeggio",
@@ -2924,10 +2912,7 @@
       "Stealth": "14",
       "Weight": "7.0",
       "Sell Price": "5500",
-      "Sell Price All Levels": "5500,8000,11500,15000",
-      "Level II": "20% Increased Fire Rate12.5% Reduced Reload Time+10 Durability",
-      "Level III": "40% Increased Fire Rate25% Reduced Reload Time+20 Durability",
-      "Level IV": "60% Increased Fire Rate50% Reduced Reload Time+30 Durability"
+      "Sell Price All Levels": "5500,8000,11500,15000"
     },
     {
       "name": "Tempest",
@@ -2949,10 +2934,7 @@
       "Stealth": "14",
       "Weight": "11.0",
       "Sell Price": "13000",
-      "Sell Price All Levels": "13000,17000,22000,27000",
-      "Level II": "16.6% Reduced Horizontal Recoil13% Reduced Reload Time+10 Durability",
-      "Level III": "33.3% Reduced Horizontal Recoil26% Reduced Reload Time+20 Durability",
-      "Level IV": "50% Reduced Horizontal Recoil40% Reduced Reload Time+30 Durability"
+      "Sell Price All Levels": "13000,17000,22000,27000"
     },
     {
       "name": "Bettina",
@@ -2974,10 +2956,7 @@
       "Stealth": "14",
       "Weight": "11.0",
       "Sell Price": "8000",
-      "Sell Price All Levels": "8000,11000,14000,18000",
-      "Level II": "5% Increased Fire Rate11.1% Reduced Reload Time+10 Durability",
-      "Level III": "10% Increased Fire Rate22.2% Reduced Reload Time+20 Durability",
-      "Level IV": "15% Increased Fire Rate33.3% Reduced Reload Time+30 Durability"
+      "Sell Price All Levels": "8000,11000,14000,18000"
     },
     {
       "name": "Ferro",
@@ -3000,10 +2979,7 @@
       "Stealth": "8",
       "Weight": "8.0",
       "Sell Price": "475",
-      "Sell Price All Levels": "475,1000,2000,2900",
-      "Level II": "13% Reduced Reload Time+10 Durability",
-      "Level III": "26% Reduced Reload Time+20 Durability",
-      "Level IV": "39% Reduced Reload Time+30 Durability"
+      "Sell Price All Levels": "475,1000,2000,2900"
     },
     {
       "name": "Renegade",
@@ -3070,10 +3046,7 @@
       "Stealth": "19",
       "Weight": "5.0",
       "Sell Price": "800",
-      "Sell Price All Levels": "800,2000,3000,5000",
-      "Level II": "16.6% Reduced Horizontal Recoil13% Reduced Reload Time+10 Durability",
-      "Level III": "33.3% Reduced Horizontal Recoil26% Reduced Reload Time+20 Durability",
-      "Level IV": "50% Reduced Horizontal Recoil40% Reduced Reload Time+30 Durability"
+      "Sell Price All Levels": "800,2000,3000,5000"
     },
     {
       "name": "Bobcat",
