@@ -1510,7 +1510,7 @@
       "background_color": "#0070dd",
       "image_url": "https://arcraiders.wiki/w/images/thumb/0/0f/Headphones.png/348px-Headphones.png.webp",
       "image_path": "images/Loot_Headphones.png",
-      "Can Be Found In": "CommercialResidential",
+      "Can Be Found In": "ResidentialCommercial",
       "Weight": "2.0",
       "Stack Size": "3",
       "Sell Price": "1000"
@@ -1761,7 +1761,7 @@
       "image_path": "images/Loot_Metal Brackets.png",
       "Can Be Found In": "MechanicalElectrical",
       "Weight": "0.8",
-      "Stack Size": "5",
+      "Stack Size": "3",
       "Sell Price": "640"
     },
     {
