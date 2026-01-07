@@ -1523,7 +1523,7 @@
       "background_color": "#0070dd",
       "image_url": "https://arcraiders.wiki/w/images/thumb/3/33/Heavy_Gun_Parts.png/348px-Heavy_Gun_Parts.png.webp",
       "image_path": "images/Loot_Heavy Gun Parts.png",
-      "Can Be Found In": "RaiderSecurity",
+      "Can Be Found In": "SecurityRaider",
       "Weight": "0.5",
       "Stack Size": "5",
       "Sell Price": "700"
@@ -1668,7 +1668,7 @@
       "background_color": "#0070dd",
       "image_url": "https://arcraiders.wiki/w/images/thumb/c/c9/Light_Gun_Parts.png/348px-Light_Gun_Parts.png.webp",
       "image_path": "images/Loot_Light Gun Parts.png",
-      "Can Be Found In": "SecurityRaider",
+      "Can Be Found In": "RaiderSecurity",
       "Weight": "0.3",
       "Stack Size": "5",
       "Sell Price": "700"
@@ -1799,7 +1799,7 @@
       "image_url": "https://arcraiders.wiki/w/images/thumb/9/9f/Mini_Centrifuge.png/348px-Mini_Centrifuge.png.webp",
       "image_path": "images/Loot_Mini Centrifuge.png",
       "Can Be Found In": "Exodus",
-      "Weight": "3.0",
+      "Weight": "1.5",
       "Stack Size": "3",
       "Sell Price": "3000"
     },
@@ -2405,7 +2405,7 @@
       "background_color": "#0070dd",
       "image_url": "https://arcraiders.wiki/w/images/thumb/9/9c/Sensors.png/348px-Sensors.png.webp",
       "image_path": "images/Loot_Sensors.png",
-      "Can Be Found In": "TechnologicalSecurity",
+      "Can Be Found In": "SecurityTechnological",
       "Weight": "0.3",
       "Stack Size": "5",
       "Sell Price": "500"
@@ -2866,8 +2866,7 @@
       "Agility": "58.5",
       "Stealth": "26",
       "Weight": "7.0",
-      "Sell Price": "840",
-      "Sell Price All Levels": "840,2000,3000,5000"
+      "Sell Price": "840200030005000"
     },
     {
       "name": "Rattler",
@@ -2889,8 +2888,7 @@
       "Agility": "54.8",
       "Stealth": "14",
       "Weight": "6.0",
-      "Sell Price": "1750",
-      "Sell Price All Levels": "1750,3000,5000,7000"
+      "Sell Price": "1750300050007000"
     },
     {
       "name": "Arpeggio",
@@ -2911,8 +2909,7 @@
       "Agility": "57.3",
       "Stealth": "14",
       "Weight": "7.0",
-      "Sell Price": "5500",
-      "Sell Price All Levels": "5500,8000,11500,15000"
+      "Sell Price": "550080001150015000"
     },
     {
       "name": "Tempest",
@@ -2933,8 +2930,7 @@
       "Agility": "46",
       "Stealth": "14",
       "Weight": "11.0",
-      "Sell Price": "13000",
-      "Sell Price All Levels": "13000,17000,22000,27000"
+      "Sell Price": "13000170002200027000"
     },
     {
       "name": "Bettina",
@@ -2955,8 +2951,7 @@
       "Agility": "48.2",
       "Stealth": "14",
       "Weight": "11.0",
-      "Sell Price": "8000",
-      "Sell Price All Levels": "8000,11000,14000,18000"
+      "Sell Price": "8000110001400018000"
     },
     {
       "name": "Ferro",
@@ -2978,8 +2973,7 @@
       "Agility": "32.1",
       "Stealth": "8",
       "Weight": "8.0",
-      "Sell Price": "475",
-      "Sell Price All Levels": "475,1000,2000,2900"
+      "Sell Price": "475100020002900"
     },
     {
       "name": "Renegade",
@@ -3001,8 +2995,7 @@
       "Agility": "55.8",
       "Stealth": "16",
       "Weight": "10.0",
-      "Sell Price": "7000",
-      "Sell Price All Levels": "7000,10000,13000,17000"
+      "Sell Price": "7000100001300017000"
     },
     {
       "name": "Aphelion",
@@ -3045,8 +3038,7 @@
       "Agility": "73.8",
       "Stealth": "19",
       "Weight": "5.0",
-      "Sell Price": "800",
-      "Sell Price All Levels": "800,2000,3000,5000"
+      "Sell Price": "800200030005000"
     },
     {
       "name": "Bobcat",
@@ -3067,8 +3059,7 @@
       "Agility": "73.1",
       "Stealth": "21",
       "Weight": "7.0",
-      "Sell Price": "13000",
-      "Sell Price All Levels": "13000,17000,22000,27000"
+      "Sell Price": "13000170002200027000"
     },
     {
       "name": "Il Toro",
@@ -3089,8 +3080,7 @@
       "Agility": "61.1",
       "Stealth": "18",
       "Weight": "8.0",
-      "Sell Price": "5000",
-      "Sell Price All Levels": "5000,7000,10000,13000"
+      "Sell Price": "500070001000013000"
     },
     {
       "name": "Vulcano",
@@ -3111,8 +3101,7 @@
       "Agility": "70.3",
       "Stealth": "15",
       "Weight": "8.0",
-      "Sell Price": "10000",
-      "Sell Price All Levels": "10000,13000,17000,22000"
+      "Sell Price": "10000130001700022000"
     },
     {
       "name": "Hairpin",
@@ -3134,8 +3123,7 @@
       "Agility": "78.3",
       "Stealth": "70",
       "Weight": "3.0",
-      "Sell Price": "450",
-      "Sell Price All Levels": "450,1000,2000,2900"
+      "Sell Price": "450100020002900"
     },
     {
       "name": "Burletta",
@@ -3156,8 +3144,7 @@
       "Agility": "84.4",
       "Stealth": "24",
       "Weight": "4.0",
-      "Sell Price": "2900",
-      "Sell Price All Levels": "2900,5000,7000,10000"
+      "Sell Price": "29005000700010000"
     },
     {
       "name": "Venator",
@@ -3180,8 +3167,7 @@
       "Agility": "76.4",
       "Stealth": "12",
       "Weight": "5.0",
-      "Sell Price": "7000",
-      "Sell Price All Levels": "7000,10000,13000,17000"
+      "Sell Price": "7000100001300017000"
     },
     {
       "name": "Anvil",
@@ -3203,8 +3189,7 @@
       "Agility": "69.1",
       "Stealth": "10",
       "Weight": "5.0",
-      "Sell Price": "5000",
-      "Sell Price All Levels": "5000,7000,10000,13000"
+      "Sell Price": "500070001000013000"
     },
     {
       "name": "Torrente",
@@ -3225,8 +3210,7 @@
       "Agility": "37.7",
       "Stealth": "1",
       "Weight": "12.0",
-      "Sell Price": "7000",
-      "Sell Price All Levels": "7000,10000,13000,17000"
+      "Sell Price": "7000100001300017000"
     },
     {
       "name": "Osprey",
@@ -3248,8 +3232,7 @@
       "Agility": "45.9",
       "Stealth": "12",
       "Weight": "7.0",
-      "Sell Price": "7000",
-      "Sell Price All Levels": "7000,10000,13000,17000"
+      "Sell Price": "7000100001300017000"
     },
     {
       "name": "Jupiter",
@@ -3293,8 +3276,7 @@
       "Agility": "67.9",
       "Stealth": "1",
       "Weight": "7.0",
-      "Sell Price": "10000",
-      "Sell Price All Levels": "10000,13000,17000,22000"
+      "Sell Price": "10000130001700022000"
     },
     {
       "name": "Equalizer",
