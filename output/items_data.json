@@ -3583,7 +3583,7 @@
       "Weight": "0.4",
       "Stack Size": "5",
       "Sell Price": "2200",
-      "ARC Stun": "10s",
+      "ARC Stun": "7s",
       "Raider Stun": "2s",
       "Radius": "6m"
     },
@@ -3992,19 +3992,6 @@
       "Sell Price": "640"
     },
     {
-      "name": "Firecracker",
-      "url": "https://arcraiders.wiki/wiki/Firecracker",
-      "category": "Quick Use",
-      "Rarity": "Common",
-      "background_color": "#9d9d9d",
-      "image_url": "https://arcraiders.wiki/w/images/thumb/8/86/Firecracker.png/348px-Firecracker.png.webp",
-      "image_path": "images/Quick Use_Firecracker.png",
-      "Weight": "0.05",
-      "Stack Size": "5",
-      "Sell Price": "270",
-      "Duration": "7.5s"
-    },
-    {
       "name": "Flame Spray",
       "url": "https://arcraiders.wiki/wiki/Flame_Spray",
       "category": "Quick Use",
@@ -4103,6 +4090,19 @@
       "Stack Size": "1",
       "Sell Price": "14000",
       "Range": "20m"
+    },
+    {
+      "name": "Firecracker",
+      "url": "https://arcraiders.wiki/wiki/Firecracker",
+      "category": "Quick Use",
+      "Rarity": "Common",
+      "background_color": "#9d9d9d",
+      "image_url": "https://arcraiders.wiki/w/images/thumb/8/86/Firecracker.png/348px-Firecracker.png.webp",
+      "image_path": "images/Quick Use_Firecracker.png",
+      "Weight": "0.05",
+      "Stack Size": "5",
+      "Sell Price": "270",
+      "Duration": "7.5s"
     },
     {
       "name": "Blaze Grenade Trap",
