@@ -542,7 +542,7 @@
       "Can Be Found In": "Residential",
       "Weight": "2.0",
       "Stack Size": "3",
-      "Sell Price": "Residential"
+      "Sell Price": "1000"
     },
     {
       "name": "Ancient Fort Security Code",
@@ -3460,7 +3460,7 @@
       "Firing Mode": "Semi-Automatic",
       "ARC Armor Penetration": "Very Weak",
       "Damage": "10",
-      "Fire Rate": "28",
+      "Fire Rate": "26",
       "Range": "42.8",
       "Stability": "69.8",
       "Agility": "58.5",
@@ -4241,7 +4241,8 @@
       "Stack Size": "3",
       "Sell Price": "1000",
       "Damage": "90",
-      "Radius": "7.5m"
+      "Radius": "7.5m",
+      "Delay": "1.5s"
     },
     {
       "name": "",
