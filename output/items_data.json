@@ -220,7 +220,7 @@
       "background_color": "#9d9d9d",
       "image_url": "https://arcraiders.wiki/w/images/thumb/e/e1/Empty_Wine_Bottle.png/348px-Empty_Wine_Bottle.png.webp",
       "image_path": "images/Trinkets_Empty Wine Bottle.png",
-      "Can Be Found In": "CommercialResidential",
+      "Can Be Found In": "ResidentialCommercial",
       "Weight": "0.2",
       "Stack Size": "5",
       "Sell Price": "1000"
@@ -493,7 +493,7 @@
       "background_color": "#1eff00",
       "image_url": "https://arcraiders.wiki/w/images/thumb/a/a4/Very_Comfortable_Pillow.png/348px-Very_Comfortable_Pillow.png.webp",
       "image_path": "images/Trinkets_Very Comfortable Pillow.png",
-      "Can Be Found In": "CommercialResidential",
+      "Can Be Found In": "ResidentialCommercial",
       "Weight": "0.3",
       "Stack Size": "3",
       "Sell Price": "2000"
@@ -2340,7 +2340,7 @@
       "background_color": "#9d9d9d",
       "image_url": "https://arcraiders.wiki/w/images/thumb/c/c9/Plastic_Parts.png/348px-Plastic_Parts.png.webp",
       "image_path": "images/Loot_Plastic Parts.png",
-      "Can Be Found In": "TechnologicalCommercialResidential",
+      "Can Be Found In": "CommercialResidentialTechnological",
       "Weight": "0.1",
       "Stack Size": "50",
       "Sell Price": "60"
@@ -2628,7 +2628,7 @@
       "background_color": "#0070dd",
       "image_url": "https://arcraiders.wiki/w/images/thumb/b/b4/Rope.png/348px-Rope.png.webp",
       "image_path": "images/Loot_Rope.png",
-      "Can Be Found In": "CommercialResidential",
+      "Can Be Found In": "ResidentialCommercial",
       "Weight": "0.3",
       "Stack Size": "5",
       "Sell Price": "500"
