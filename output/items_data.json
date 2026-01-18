@@ -1151,7 +1151,7 @@
       "image_url": "https://arcraiders.wiki/w/images/thumb/1/13/Cooling_Fan.png/348px-Cooling_Fan.png.webp",
       "image_path": "images/Loot_Cooling Fan.png",
       "Can Be Found In": "Technological",
-      "Weight": "3",
+      "Weight": "3.0",
       "Stack Size": "3",
       "Sell Price": "2000"
     },
@@ -1289,7 +1289,7 @@
       "image_url": "https://arcraiders.wiki/w/images/thumb/1/1f/Damaged_Heat_Sink.png/348px-Damaged_Heat_Sink.png.webp",
       "image_path": "images/Loot_Damaged Heat Sink.png",
       "Can Be Found In": "Technological",
-      "Weight": "2",
+      "Weight": "2.0",
       "Stack Size": "3",
       "Sell Price": "1000"
     },
@@ -1723,7 +1723,7 @@
       "image_url": "https://arcraiders.wiki/w/images/thumb/2/29/Fried_Motherboard.png/348px-Fried_Motherboard.png.webp",
       "image_path": "images/Loot_Fried Motherboard.png",
       "Can Be Found In": "Technological",
-      "Weight": "3",
+      "Weight": "3.0",
       "Stack Size": "3",
       "Sell Price": "2000"
     },
@@ -2655,7 +2655,7 @@
       "image_url": "https://arcraiders.wiki/w/images/thumb/1/1a/Rubber_Pad.png/348px-Rubber_Pad.png.webp",
       "image_path": "images/Loot_Rubber Pad.png",
       "Can Be Found In": "Electrical",
-      "Weight": "2",
+      "Weight": "2.0",
       "Stack Size": "3",
       "Sell Price": "1000"
     },
@@ -2784,7 +2784,7 @@
       "image_url": "https://arcraiders.wiki/w/images/thumb/c/cf/Rusted_Gear.png/348px-Rusted_Gear.png.webp",
       "image_path": "images/Loot_Rusted Gear.png",
       "Can Be Found In": "Industrial",
-      "Weight": "3",
+      "Weight": "3.0",
       "Stack Size": "3",
       "Sell Price": "2000"
     },
@@ -4195,7 +4195,7 @@
       "Stack Size": "3",
       "Sell Price": "270",
       "Stamina": "-25/s",
-      "Duration": "20s",
+      "Duration": "20s[1]",
       "Radius": "7.5m"
     },
     {
@@ -4463,7 +4463,8 @@
       "Stack Size": "3",
       "Sell Price": "1000",
       "Damage": "5/s",
-      "Duration": "10s"
+      "Duration": "10s",
+      "Radius": "10m"
     },
     {
       "name": "Deadline",
@@ -4585,7 +4586,7 @@
       "Stack Size": "3",
       "Sell Price": "300",
       "Stamina": "-25/s",
-      "Duration": "20s",
+      "Duration": "20s[1]",
       "Radius": "7.5m"
     },
     {
