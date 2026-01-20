@@ -3311,8 +3311,8 @@
       "image_url": "https://arcraiders.wiki/w/images/thumb/9/95/Tick_Pod.png/348px-Tick_Pod.png.webp",
       "image_path": "images/Loot_Tick Pod.png",
       "Can Be Found In": "ARC",
-      "Weight": "0.25",
-      "Stack Size": "5",
+      "Weight": "0.5",
+      "Stack Size": "3",
       "Sell Price": "640"
     },
     {
