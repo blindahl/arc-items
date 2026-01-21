@@ -226,18 +226,6 @@
       "Sell Price": "1000"
     },
     {
-      "name": "ESR Analyzer",
-      "url": "https://arcraiders.wiki/wiki/ESR_Analyzer",
-      "category": "Trinkets",
-      "Rarity": "Common",
-      "background_color": "#9d9d9d",
-      "image_url": "https://arcraiders.wiki/w/images/thumb/5/5e/ESR_Analyzer.png/348px-ESR_Analyzer.png.webp",
-      "image_path": "images/Trinkets_ESR Analyzer.png",
-      "Weight": "0.25",
-      "Stack Size": "1",
-      "Sell Price": "0"
-    },
-    {
       "name": "Expired Pasta",
       "url": "https://arcraiders.wiki/wiki/Expired_Pasta",
       "category": "Trinkets",
@@ -1444,7 +1432,7 @@
       "background_color": "#1eff00",
       "image_url": "https://arcraiders.wiki/w/images/thumb/4/4e/Duct_Tape.png/348px-Duct_Tape.png.webp",
       "image_path": "images/Loot_Duct Tape.png",
-      "Can Be Found In": "CommercialResidential",
+      "Can Be Found In": "ResidentialCommercial",
       "Weight": "0.25",
       "Stack Size": "15",
       "Sell Price": "300"
@@ -1486,6 +1474,18 @@
       "Weight": "0.3",
       "Stack Size": "5",
       "Sell Price": "1000"
+    },
+    {
+      "name": "ESR Analyzer",
+      "url": "https://arcraiders.wiki/wiki/ESR_Analyzer",
+      "category": "Loot",
+      "Rarity": "Common",
+      "background_color": "#9d9d9d",
+      "image_url": "https://arcraiders.wiki/w/images/thumb/5/5e/ESR_Analyzer.png/348px-ESR_Analyzer.png.webp",
+      "image_path": "images/Loot_ESR Analyzer.png",
+      "Weight": "0.25",
+      "Stack Size": "1",
+      "Sell Price": "0"
     },
     {
       "name": "Exodus Modules",
@@ -3484,7 +3484,8 @@
       "Firing Mode": "Semi-Automatic",
       "ARC Armor Penetration": "Very Weak",
       "Damage": "10",
-      "Fire Rate": "26",
+      "Fire Rate": "28",
+      "Headshot Multiplier": "2.5x",
       "Range": "42.8",
       "Stability": "69.8",
       "Agility": "58.5",
@@ -3528,6 +3529,7 @@
       "ARC Armor Penetration": "Moderate",
       "Damage": "9.5",
       "Fire Rate": "18.3",
+      "Headshot Multiplier": "2x",
       "Range": "55.9",
       "Stability": "84",
       "Agility": "57.3",
@@ -3571,6 +3573,7 @@
       "ARC Armor Penetration": "Strong",
       "Damage": "14",
       "Fire Rate": "32",
+      "Headshot Multiplier": "1.5x",
       "Range": "51.3",
       "Stability": "76.4",
       "Agility": "48.2",
@@ -3658,6 +3661,7 @@
       "ARC Armor Penetration": "Very Weak",
       "Damage": "7",
       "Fire Rate": "45.3",
+      "Headshot Multiplier": "2.5x",
       "Range": "42.1",
       "Stability": "45.3",
       "Agility": "73.8",
@@ -3744,6 +3748,7 @@
       "Special Trait": "Integrated Silencer",
       "Damage": "20",
       "Fire Rate": "9",
+      "Headshot Multiplier": "2.5x",
       "Range": "38.6",
       "Stability": "90.9",
       "Agility": "78.3",
@@ -3850,9 +3855,10 @@
       "Magazine Size": "8",
       "Firing Mode": "Bolt-Action",
       "ARC Armor Penetration": "Moderate",
-      "Special Trait": "Scoped",
+      "Special Trait": "Scoped (5.66x zoom)",
       "Damage": "45",
       "Fire Rate": "17.7",
+      "Headshot Multiplier": "2x",
       "Range": "80.3",
       "Stability": "89.4",
       "Agility": "45.9",
@@ -4600,9 +4606,9 @@
       "Weight": "0.25",
       "Stack Size": "3",
       "Sell Price": "270",
-      "Stamina": "-25/s",
       "Duration": "20s",
-      "Radius": "7.5m"
+      "Radius": "7.5m",
+      "Stamina Drain": "25/s"
     },
     {
       "name": "Herbal Bandage",
