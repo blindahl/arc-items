@@ -2669,7 +2669,7 @@
       "background_color": "#9d9d9d",
       "image_url": "https://arcraiders.wiki/w/images/thumb/a/aa/Ruined_Augment.png/348px-Ruined_Augment.png.webp",
       "image_path": "images/Loot_Ruined Augment.png",
-      "Weight": "3",
+      "Weight": "3.0",
       "Stack Size": "1",
       "Sell Price": "270"
     },
@@ -4180,9 +4180,9 @@
       "Weight": "0.2",
       "Stack Size": "3",
       "Sell Price": "270",
-      "Stamina": "-25/s",
       "Duration": "20s[1]",
-      "Radius": "7.5m"
+      "Radius": "7.5m",
+      "Stamina Drain": "25/s"
     },
     {
       "name": "",
