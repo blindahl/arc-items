@@ -104,6 +104,20 @@
       "Sell Price": "700",
       "Damage": "80",
       "Radius": "7.5m"
+    },
+    {
+      "name": "",
+      "url": "https://arcraiders.wiki/wiki/Volcanic_Rock",
+      "category": "Grenades",
+      "Rarity": "Common",
+      "background_color": "#9d9d9d",
+      "image_url": "https://arcraiders.wiki/w/images/thumb/2/26/Volcanic_Rock.png/348px-Volcanic_Rock.png.webp",
+      "image_path": "images/Grenades_.png",
+      "Can Be Found In": "Nature",
+      "Weight": "0.5",
+      "Stack Size": "5",
+      "Sell Price": "270",
+      "Damage": "10"
     }
   ],
   "Trinkets": [
@@ -3380,20 +3394,6 @@
       "Sell Price": "5000"
     },
     {
-      "name": "Volcanic Rock",
-      "url": "https://arcraiders.wiki/wiki/Volcanic_Rock",
-      "category": "Loot",
-      "Rarity": "Common",
-      "background_color": "#9d9d9d",
-      "image_url": "https://arcraiders.wiki/w/images/thumb/2/26/Volcanic_Rock.png/348px-Volcanic_Rock.png.webp",
-      "image_path": "images/Loot_Volcanic Rock.png",
-      "Can Be Found In": "Nature",
-      "Weight": "0.5",
-      "Stack Size": "5",
-      "Sell Price": "270",
-      "Damage": "10"
-    },
-    {
       "name": "Voltage Converter",
       "url": "https://arcraiders.wiki/wiki/Voltage_Converter",
       "category": "Loot",
@@ -4846,6 +4846,41 @@
       "Stack Size": "3",
       "Sell Price": "1000",
       "Range": "60m"
+    },
+    {
+      "name": "",
+      "url": "https://arcraiders.wiki/wiki/Healing",
+      "category": "Quick Use",
+      "image_url": "https://arcraiders.wiki/w/images/thumb/4/47/Agave.png/50px-Agave.png.webp",
+      "image_path": "images/Quick Use_.png"
+    },
+    {
+      "name": "",
+      "url": "https://arcraiders.wiki/wiki/Utility",
+      "category": "Quick Use",
+      "image_url": "https://arcraiders.wiki/w/images/thumb/c/cb/Barricade_Kit.png/50px-Barricade_Kit.png.webp",
+      "image_path": "images/Quick Use_.png"
+    },
+    {
+      "name": "",
+      "url": "https://arcraiders.wiki/wiki/Gadgets",
+      "category": "Quick Use",
+      "image_url": "https://arcraiders.wiki/w/images/thumb/7/74/Binoculars.png/50px-Binoculars.png.webp",
+      "image_path": "images/Quick Use_.png"
+    },
+    {
+      "name": "",
+      "url": "https://arcraiders.wiki/wiki/Grenades",
+      "category": "Quick Use",
+      "image_url": "https://arcraiders.wiki/w/images/thumb/4/4c/Light_Impact_Grenade.png/50px-Light_Impact_Grenade.png.webp",
+      "image_path": "images/Quick Use_.png"
+    },
+    {
+      "name": "",
+      "url": "https://arcraiders.wiki/wiki/Traps",
+      "category": "Quick Use",
+      "image_url": "https://arcraiders.wiki/w/images/thumb/3/34/Icon_Trap.png/150px-Icon_Trap.png.webp",
+      "image_path": "images/Quick Use_.png"
     }
   ]
 }
