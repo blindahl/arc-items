@@ -147,6 +147,18 @@
       "Sell Price": "2000"
     },
     {
+      "name": "Alien Duck",
+      "url": "https://arcraiders.wiki/wiki/Alien_Duck",
+      "category": "Trinkets",
+      "Rarity": "Uncommon",
+      "background_color": "#1eff00",
+      "image_url": "https://arcraiders.wiki/w/images/3/3e/Alien_Duck.png",
+      "image_path": "images/Trinkets_Alien Duck.png",
+      "Weight": "0.3",
+      "Stack Size": "15",
+      "Sell Price": "1000"
+    },
+    {
       "name": "Bloated Tuna Can",
       "url": "https://arcraiders.wiki/wiki/Bloated_Tuna_Can",
       "category": "Trinkets",
@@ -227,6 +239,18 @@
       "Sell Price": "2000"
     },
     {
+      "name": "Doodly Duck",
+      "url": "https://arcraiders.wiki/wiki/Doodly_Duck",
+      "category": "Trinkets",
+      "Rarity": "Rare",
+      "background_color": "#0070dd",
+      "image_url": "https://arcraiders.wiki/w/images/9/91/Doodly_Duck.png",
+      "image_path": "images/Trinkets_Doodly Duck.png",
+      "Weight": "0.3",
+      "Stack Size": "15",
+      "Sell Price": "3000"
+    },
+    {
       "name": "Empty Wine Bottle",
       "url": "https://arcraiders.wiki/wiki/Empty_Wine_Bottle",
       "category": "Trinkets",
@@ -268,6 +292,18 @@
       "Sell Price": "640"
     },
     {
+      "name": "Familiar Duck",
+      "url": "https://arcraiders.wiki/wiki/Familiar_Duck",
+      "category": "Trinkets",
+      "Rarity": "Epic",
+      "background_color": "#a335ee",
+      "image_url": "https://arcraiders.wiki/w/images/4/4f/Familiar_Duck.png",
+      "image_path": "images/Trinkets_Familiar Duck.png",
+      "Weight": "0.3",
+      "Stack Size": "15",
+      "Sell Price": "7000"
+    },
+    {
       "name": "Film Reel",
       "url": "https://arcraiders.wiki/wiki/Film_Reel",
       "category": "Trinkets",
@@ -292,6 +328,30 @@
       "Weight": "0.2",
       "Stack Size": "3",
       "Sell Price": "3000"
+    },
+    {
+      "name": "Flashy Duck",
+      "url": "https://arcraiders.wiki/wiki/Flashy_Duck",
+      "category": "Trinkets",
+      "Rarity": "Rare",
+      "background_color": "#0070dd",
+      "image_url": "https://arcraiders.wiki/w/images/f/f1/Flashy_Duck.png",
+      "image_path": "images/Trinkets_Flashy Duck.png",
+      "Weight": "0.3",
+      "Stack Size": "15",
+      "Sell Price": "3000"
+    },
+    {
+      "name": "Gentle Duck",
+      "url": "https://arcraiders.wiki/wiki/Gentle_Duck",
+      "category": "Trinkets",
+      "Rarity": "Uncommon",
+      "background_color": "#1eff00",
+      "image_url": "https://arcraiders.wiki/w/images/c/c4/Gentle_Duck.png",
+      "image_path": "images/Trinkets_Gentle Duck.png",
+      "Weight": "0.3",
+      "Stack Size": "15",
+      "Sell Price": "1000"
     },
     {
       "name": "Lance's Mixtape (5th Edition)",
@@ -460,6 +520,18 @@
       "Can Be Found In": "ResidentialOld World",
       "Weight": "0.3",
       "Stack Size": "5",
+      "Sell Price": "1000"
+    },
+    {
+      "name": "Tropical Duck",
+      "url": "https://arcraiders.wiki/wiki/Tropical_Duck",
+      "category": "Trinkets",
+      "Rarity": "Uncommon",
+      "background_color": "#1eff00",
+      "image_url": "https://arcraiders.wiki/w/images/c/cc/Tropical_Duck.png",
+      "image_path": "images/Trinkets_Tropical Duck.png",
+      "Weight": "0.3",
+      "Stack Size": "15",
       "Sell Price": "1000"
     },
     {
@@ -4016,6 +4088,19 @@
       "Sell Price": "5000"
     },
     {
+      "name": "Looting Mk. 3 (Safekeeper)",
+      "url": "https://arcraiders.wiki/wiki/Looting_Mk._3_(Safekeeper)",
+      "category": "Augments",
+      "Rarity": "Epic",
+      "background_color": "#a335ee",
+      "image_url": "https://arcraiders.wiki/w/images/thumb/c/c6/Looting_Mk._3_%28Safekeeper%29.png/348px-Looting_Mk._3_%28Safekeeper%29.png.webp",
+      "image_path": "images/Loot_Looting Mk. 3 (Safekeeper).png",
+      "Shield Compatibility": "Light, Medium, Heavy",
+      "Weight Limit": "65.0",
+      "Weight": "5.0",
+      "Sell Price": "5000"
+    },
+    {
       "name": "Looting Mk. 3 (Survivor)",
       "url": "https://arcraiders.wiki/wiki/Looting_Mk._3_(Survivor)",
       "category": "Augments",
@@ -4078,6 +4163,19 @@
       "Shield Compatibility": "Light, Medium",
       "Weight Limit": "55.0",
       "Weight": "4.0",
+      "Sell Price": "5000"
+    },
+    {
+      "name": "Tactical Mk. 3 (Revival)",
+      "url": "https://arcraiders.wiki/wiki/Tactical_Mk._3_(Revival)",
+      "category": "Augments",
+      "Rarity": "Epic",
+      "background_color": "#a335ee",
+      "image_url": "https://arcraiders.wiki/w/images/thumb/e/e0/Tactical_Mk._3_%28Revival%29.png/348px-Tactical_Mk._3_%28Revival%29.png.webp",
+      "image_path": "images/Loot_Tactical Mk. 3 (Revival).png",
+      "Shield Compatibility": "Light",
+      "Weight Limit": "65.0",
+      "Weight": "3.0",
       "Sell Price": "5000"
     }
   ],
@@ -4614,6 +4712,18 @@
       "image_url": "https://arcraiders.wiki/w/images/thumb/7/74/Binoculars.png/348px-Binoculars.png.webp",
       "image_path": "images/Loot_Integrated Binoculars.png",
       "Weight": "0.5"
+    },
+    {
+      "name": "Integrated Defibrillator",
+      "url": "https://arcraiders.wiki/wiki/Integrated_Defibrillator",
+      "category": "Quick Use",
+      "Rarity": "Rare",
+      "background_color": "#0070dd",
+      "image_url": "https://arcraiders.wiki/w/images/thumb/5/5f/Defibrillator.png/348px-Defibrillator.png.webp",
+      "image_path": "images/Loot_Integrated Defibrillator.png",
+      "Weight": "0",
+      "Stack Size": "3",
+      "Use Time": "1.5s"
     },
     {
       "name": "Integrated Shield Recharger",
