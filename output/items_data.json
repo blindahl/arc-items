@@ -3577,7 +3577,40 @@
     },
     {
       "name": "",
-      "url": "https://arcraiders.wiki/wiki/Light_Stick",
+      "url": "https://arcraiders.wiki/wiki/Green_Light_Stick",
+      "category": "Quick Use",
+      "Rarity": "Common",
+      "background_color": "#9d9d9d",
+      "image_url": "https://arcraiders.wiki/w/images/thumb/2/27/Green_Light_Stick.png/348px-Green_Light_Stick.png.webp",
+      "image_path": "images/Grenades_.png",
+      "Duration": "40s",
+      "Radius": "7m"
+    },
+    {
+      "name": "",
+      "url": "https://arcraiders.wiki/wiki/Yellow_Light_Stick",
+      "category": "Quick Use",
+      "Rarity": "Common",
+      "background_color": "#9d9d9d",
+      "image_url": "https://arcraiders.wiki/w/images/thumb/1/1f/Yellow_Light_Stick.png/348px-Yellow_Light_Stick.png.webp",
+      "image_path": "images/Grenades_.png",
+      "Duration": "40s",
+      "Radius": "7m"
+    },
+    {
+      "name": "",
+      "url": "https://arcraiders.wiki/wiki/Red_Light_Stick",
+      "category": "Quick Use",
+      "Rarity": "Common",
+      "background_color": "#9d9d9d",
+      "image_url": "https://arcraiders.wiki/w/images/thumb/9/93/Red_Light_Stick.png/348px-Red_Light_Stick.png.webp",
+      "image_path": "images/Grenades_.png",
+      "Duration": "40s",
+      "Radius": "7m"
+    },
+    {
+      "name": "",
+      "url": "https://arcraiders.wiki/wiki/Blue_Light_Stick",
       "category": "Quick Use",
       "Rarity": "Common",
       "background_color": "#9d9d9d",
